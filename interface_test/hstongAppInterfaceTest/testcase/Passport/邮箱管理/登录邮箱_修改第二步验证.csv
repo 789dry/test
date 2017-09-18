@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,email,expectResult,isSkipped,testSteps,remark
+1,邮箱为空,,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的邮箱格式不正确"",""result"":{},""ok"":false}}",N,,
+2,邮箱格式错误,123wsew,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的邮箱格式不正确"",""result"":{},""ok"":false}}",N,,
+3,邮箱已存在,18600000000@test.com,"{""ro"":{""respCode"":""9999"",""respMsg"":""此邮箱已存在，请使用其他邮箱"",""result"":{},""ok"":false}}",N,,
+4,新邮箱跟原来的一样,18600000001@test.com,"{""ro"":{""respCode"":""9999"",""respMsg"":""修改的登录邮箱不能与原邮箱相同"",""result"":{},""ok"":false}}",N,,
+5,成功修改邮箱,18600000001@test1.com,"{""mode"":""SEND"",""id"":807,""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+6,用户未登录调用接口,test@test.com,"{""ro"":{""ok"":false,""respCode"":""10006"",""respMsg"":""未登录"",""result"":{},""sid"":""""}}",N,,
+7,每天只能发送10次邮箱验证,test@test.com,"{""ro"":{""respCode"":""9999"",""respMsg"":""您发送验证邮件的次数超过限制，请明天再进行验证"",""result"":{},""ok"":false}}",N,,

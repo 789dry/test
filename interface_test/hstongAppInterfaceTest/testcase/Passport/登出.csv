@@ -1,0 +1,3 @@
+testCaseNo,testCaseName,token,expectResult,isSkipped,testSteps,remark
+1,用户未登录调用接口,,"{""ro"":{""ok"":false,""respCode"":""10006"",""respMsg"":""未登录"",""result"":{},""sid"":""""}}",N,,
+2,用户登录后正常退出,1b777c77a68a74546dcfd5549f1f239e,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

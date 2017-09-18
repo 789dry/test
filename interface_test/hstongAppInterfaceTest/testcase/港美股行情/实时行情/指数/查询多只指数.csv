@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,dataType,expectResult,isSkipped,testSteps,remark
+1,指数类型为空,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+2,指数类型错误,30000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,成功查询多只指数信息,10001,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

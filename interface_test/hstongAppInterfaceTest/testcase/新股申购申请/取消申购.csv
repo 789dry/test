@@ -1,0 +1,3 @@
+testCaseNo,testCaseName,applyId,expectResult,isSkipped,testSteps,remark
+1,申购Id为空,,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""7b757d9d187c4381bdd774fd55360e7a-1710"",""sign"":"""",""timestamp"":1496821154383,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+2,申购Id不存在,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""申请记录不存在"",""sid"":""7b757d9d187c4381bdd774fd55360e7a-1710"",""result"":{},""ok"":false}}",N,,

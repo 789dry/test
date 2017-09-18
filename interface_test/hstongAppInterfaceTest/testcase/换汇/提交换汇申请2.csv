@@ -1,0 +1,5 @@
+testCaseNo,testCaseName,currencyCode,amount,targetCurrencyCode,targetAmount,rate,password,expectResult,isSkipped,testSteps,remark
+17,汇率为空,HKD,1000,USD,128.21,,123456,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+18,汇率为0,HKD,1000,USD,128.21,0,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""汇率信息已经更新，请重新申请"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+19,汇率为负数,HKD,1000,USD,128.21,-7.8,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""汇率信息已经更新，请重新申请"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+20,汇率错误,HKD,1000,USD,128.21,2,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""汇率信息已经更新，请重新申请"",""sid"":"""",""result"":{},""ok"":false}}",N,,

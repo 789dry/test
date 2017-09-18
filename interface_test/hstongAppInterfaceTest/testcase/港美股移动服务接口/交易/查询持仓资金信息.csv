@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,exchangeType,expectResult,isSkipped,testSteps,remark
+1,交易类型为空,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+2,交易类型错误,A,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+3,成功查询持仓资金信息,P,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,

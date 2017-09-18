@@ -1,0 +1,12 @@
+testCaseNo,testCaseName,counryCode,mobile,thirdType,thirdUid,expectResult,isSkipped,testSteps,remark
+1,国家区号为空,,18600000050,2,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,国家区号错误,1000,18600000050,2,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+3,国家区号与手机号不对应,852,18600000050,2,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+4,手机号为空,86,,2,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+5,手机号码错误,86,18600000050,2,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+6,第三方账号类型为空,86,18600000050,,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+7,第三方账号类型错误,86,18600000050,0,65DDE6CEB8C260C1322A1014EA0545B8,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+8,thirdUid为空,86,18600000050,2,,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的手机号码不正确"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+9,已登录用户不能调用,,,,,"{""ro"":{""respCode"":""9999"",""respMsg"":""已经登录"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+10,第三方账号已经绑定其他手机号,,,,,"{""ro"":{""respCode"":""9999"",""respMsg"":""已被其他用户绑定"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+11,手机号已经绑定其他第三方账号,,,,,"{""ro"":{""respCode"":""9999"",""respMsg"":""已绑定其他账号"",""sid"":"""",""result"":{},""ok"":false}}",N,,

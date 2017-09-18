@@ -1,0 +1,11 @@
+testCaseNo,testCaseName,securityCode,warrantType,dateType,dataType,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,1,1,10000,"{""ro"":{""respCode"":""9999"",""respMsg"":""securityCode参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,股票代码错误,10080.hk,1,1,10000,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""ecabc2219213480c9c93f6692608ba6f-1710"",""sign"":"""",""timestamp"":1498455521769,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+3,窝轮类型为空,00700.HK,,1,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,窝轮类型错误,00700.HK,0,1,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+5,日期类型为空,00700.HK,1,,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,日期类型错误,00700.HK,1,4,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+7,股票类型为空,00700.HK,1,1,,"{""ro"":{""respCode"":""9999"",""respMsg"":""dataType参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+8,股票类型错误,00700.HK,1,1,30000,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""3d432b179608479a8c21a10357a76dfc-1710"",""sign"":"""",""timestamp"":1498456316497,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+9,股票类型与股票代码不匹配,00700.HK,1,1,20000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+10,成功获取窝轮牛熊证列表的简单行情,00700.HK,1,1,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

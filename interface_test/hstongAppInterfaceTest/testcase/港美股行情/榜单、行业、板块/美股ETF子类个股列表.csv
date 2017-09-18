@@ -1,0 +1,13 @@
+testCaseNo,testCaseName,etfSubTypeCode,offset,limit,order,expectResult,isSkipped,testSteps,remark
+1,美股ETF子类代码为空,,0,10,ASC,"{""ro"":{""respCode"":""9999"",""respMsg"":""etfSubTypeCode参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,美股ETF子类代码错误,0,0,10,ASC,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,分页偏移量为空,101,,10,ASC,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+4,分页偏移量为负数,101,-10,10,ASC,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1498113606952,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+5,分页偏移量大于总的数据量,101,9999,10,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,页面显示数量为空,101,0,,ASC,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+7,页面显示数量为负数,101,0,-10,ASC,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1498113606952,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+8,页面显示数量为0,101,0,0,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+9,页面显示数量大于总的数据量,101,0,9999,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+10,排序方式为空,101,0,10,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+11,排序方式错误,101,0,10,ASCB,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+12,成功获取美股ETF子类个股列表信息,101,0,10,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

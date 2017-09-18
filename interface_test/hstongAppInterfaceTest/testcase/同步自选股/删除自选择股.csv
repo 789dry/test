@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,deleteCodes,expectResult,isSkipped,testSteps,remark
+1,股票代码字符串为空,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""016ec2ed122e43aba3d319fd24c50cca-2718"",""result"":{},""ok"":true}}",N,,
+2,股票代码字符串无效,CPHI.HK|10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""016ec2ed122e43aba3d319fd24c50cca-2718"",""result"":{},""ok"":true}}",N,,
+3,成功删除自选择港股,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,
+4,成功删除自选择美股,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,
+5,删除非自选择股,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,
+6,删除所有的自选择股,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,
+7,未登录不允许调用接口,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,

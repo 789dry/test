@@ -1,0 +1,10 @@
+testCaseNo,testCaseName,mobile,smsId,expectResult,isSkipped,testSteps,remark
+1,手机号码为空,,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+2,手机号码为9位数字,123456789,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+3,手机号码为3位数字,110,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+4,手机号码为12位数字,1.86E+11,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+5,手机号码含有字母,1860000000a,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+6,手机号码含有空格,158 2365498,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+7,手机号码含有特殊字符,158;2365498,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+8,smsId为空,18600000005,,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,
+9,smsId错误,18600000005,123456,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证过期"",""result"":{},""ok"":false}}",N,,

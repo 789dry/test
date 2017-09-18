@@ -1,0 +1,7 @@
+testCaseNo,testCaseName,indexCode,dataType,expectResult,isSkipped,testSteps,remark
+1,指数代码为空,,10001,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+2,指数代码错误,HSIA.hk,10001,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,股指类型为空,HSCEI.HK,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,股指类型错误,HSCEI.HK,30001,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+5,股指类型与指数代码不匹配,HSCEI.HK,20001,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,成功查询某只指数行情信息,HSCEI.HK,10001,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

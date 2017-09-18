@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,exchangeType,stockCode,expectResult,isSkipped,testSteps,remark
+1,交易类型为空,,00080,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+2,交易类型错误,A,00080,"{""data"":"""",""ro"":{""respCode"":""-61"",""respMsg"":""安全码校验失败"",""sid"":""28d5a4cbd9b44dcdbcba477317c3da68-1710"",""result"":{},""ok"":false}}",N,,
+3,股票代码为空,K,,"{""data"":"""",""ro"":{""respCode"":""-61"",""respMsg"":""无此股票"",""sid"":""cefc380aaddc4514a8923113514f90d7-1710"",""result"":{},""ok"":false}}",N,,
+4,股票代码错误,K,19700,"{""data"":"""",""ro"":{""respCode"":""-61"",""respMsg"":""无此股票"",""sid"":""cefc380aaddc4514a8923113514f90d7-1710"",""result"":{},""ok"":false}}",N,,
+5,成功获取最大可卖数量,K,00080,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,

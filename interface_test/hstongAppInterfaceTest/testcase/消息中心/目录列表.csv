@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,type,offset,limit,expectResult,isSkipped,testSteps,remark
+1,消息类型不存在,0,0,20,"{""ro"":{""respCode"":""9999"",""respMsg"":""type参数值非法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,偏移量数值无效为负数,2,-1,20,"{""ro"":{""respCode"":""9999"",""respMsg"":""offset参数非法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+3,偏移量大于当前消息数量,2,100,20,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,每次最多查询数量无效为负数,2,0,-1,"{""ro"":{""respCode"":""9999"",""respMsg"":""limit参数非法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+5,每次最多查询数量无效为0,2,0,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""limit参数非法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+6,每次最多查询数量大于消息数量,2,0,100,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""82d92db3bf3b4484835c2d0335ae8360-1381"",""result"":{},""ok"":true}}",N,,
+7,每次最多查询数量小于消息数量,1,0,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""82d92db3bf3b4484835c2d0335ae8360-1381"",""result"":{},""ok"":true}}",N,,

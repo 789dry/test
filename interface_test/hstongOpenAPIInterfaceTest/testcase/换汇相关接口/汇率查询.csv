@@ -1,0 +1,10 @@
+testCaseNo,testCaseName,currencyCode,targetCurrencyCode,expectResult,isSkipped,testSteps,remark
+1,源币种为空,,USD,"{""ro"":{""respCode"":""9999"",""respMsg"":""未知的源币种"",""sid"":""364ec7f4e4504ec5a805be1e0586e31c-1381"",""result"":{},""ok"":false}}",N,,
+2,源币种错误,RMB,USD,"{""ro"":{""respCode"":""9999"",""respMsg"":""未知的源币种"",""sid"":""364ec7f4e4504ec5a805be1e0586e31c-1381"",""result"":{},""ok"":false}}",N,,
+3,目标币种为空,HKD,,"{""ro"":{""respCode"":""9999"",""respMsg"":""未知的目标币种"",""sid"":""364ec7f4e4504ec5a805be1e0586e31c-1381"",""result"":{},""ok"":false}}",N,,
+4,目标币种错误,HKD,RMB,"{""ro"":{""respCode"":""9999"",""respMsg"":""未知的目标币种"",""sid"":""364ec7f4e4504ec5a805be1e0586e31c-1381"",""result"":{},""ok"":false}}",N,,
+5,源币种与目标币种相同都是港币,HKD,HKD,"{""ro"":{""respCode"":""9999"",""respMsg"":""源币种和目标币种不能相同"",""sid"":""364ec7f4e4504ec5a805be1e0586e31c-1381"",""result"":{},""ok"":false}}",N,,
+6,源币种与目标币种相同都是美元,USD,USD,"{""ro"":{""respCode"":""9999"",""respMsg"":""源币种和目标币种不能相同"",""sid"":""364ec7f4e4504ec5a805be1e0586e31c-1381"",""result"":{},""ok"":false}}",N,,
+7,成功查询港币兑换美元汇率,HKD,USD,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+8,成功查询美元兑换港币汇率,USD,HKD,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+9,用户未登录调用汇率查询接口,HKD,USD,"{""ro"":{""ok"":false,""respCode"":""10006"",""respMsg"":""未登录"",""result"":{},""sid"":""""}}",N,,

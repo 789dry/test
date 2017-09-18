@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,id,dataType,expectResult,isSkipped,testSteps,remark
+1,股票类型为空,动态获取,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+2,股票类型错误,动态获取,30000,{},N,,
+3,股票类型与公告类型不一致,动态获取,20000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,

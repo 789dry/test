@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,exchangeType,isNeedFundInfo,expectResult,isSkipped,testSteps,remark
+1,交易类型为空,,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+2,交易类型错误,A,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+3,是否需要资金信息字段数值为空,K,,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+4,是否需要资金信息字段数值错误,K,2,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+5,成功查询持仓信息并返回资金信息,P,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,

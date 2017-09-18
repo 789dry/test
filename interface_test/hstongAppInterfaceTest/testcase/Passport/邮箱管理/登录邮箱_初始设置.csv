@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,email,expectResult,isSkipped,testSteps,remark
+1,邮箱为空,,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的邮箱格式不正确"",""result"":{},""ok"":false}}",N,,
+2,邮箱格式错误,123wsew,"{""ro"":{""respCode"":""9999"",""respMsg"":""您输入的邮箱格式不正确"",""result"":{},""ok"":false}}",N,,
+3,账号已有邮箱,18600000000@126.com,"{""ro"":{""respCode"":""9999"",""respMsg"":""您的登录邮箱已设置，无需再次设置"",""result"":{},""ok"":false}}",N,,
+4,用户未登录调用接口,test@hstong.com,"{""ro"":{""ok"":false,""respCode"":""10006"",""respMsg"":""未登录"",""result"":{},""sid"":""""}}",N,,
+5,设置的邮箱已存在,18600000000@test.com,"{""ro"":{""respCode"":""9999"",""respMsg"":""此邮箱已存在，请使用其他邮箱"",""result"":{},""ok"":false}} ",,,

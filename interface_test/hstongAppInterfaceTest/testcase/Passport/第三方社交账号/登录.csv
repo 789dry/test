@@ -1,0 +1,11 @@
+testCaseNo,testCaseName,thirdType,thirdUid,autoLogin,expectResult,isSkipped,testSteps,remark
+1,第三方登录类型为空,,65DDE6CEB8C260C1322A1014EA0545B8,1,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{}}}",N,,
+2,第三方登录类型错误,0,65DDE6CEB8C260C1322A1014EA0545B8,1,"{""ro"":{""respCode"":""9999"",""respMsg"":""参数有误"",""result"":{},""ok"":false}}",N,,
+3,第三方登录对应账户ID为空,2,,1,"{""ro"":{""respCode"":""9999"",""respMsg"":""参数有误"",""result"":{},""ok"":false}}",N,,
+4,第三方登录对应账户ID错误,2,111111sdfsdf,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true},""bound"":false}",N,,
+5,自动登录设置为空,2,65DDE6CEB8C260C1322A1014EA0545B8,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true},""bound"":false}",N,,
+6,设置为自动登录,2,65DDE6CEB8C260C1322A1014EA0545B8,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true},""bound"":false}",N,,
+7,设置为不自动登录,2,65DDE6CEB8C260C1322A1014EA0545B8,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true},""bound"":false}",N,,
+8,自动登录值设置错误,2,65DDE6CEB8C260C1322A1014EA0545B8,2,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true},""bound"":false}",N,,
+9,第三方账号还没有绑定bound返回值为false,2,65DDE6CEB8C260C1322A1014EA0545B8,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true},""bound"":false}",N,,
+10,第三方社交账号已经绑定bound返回值为true,2,65DDE6CEB8C260C1322A1014EA0545B8,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true},""bound"":false}",N,,

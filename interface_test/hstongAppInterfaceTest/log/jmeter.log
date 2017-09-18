@@ -1,0 +1,134 @@
+2017/05/03 15:36:31 INFO  - jmeter.util.JMeterUtils: Setting Locale to zh_CN 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Loading user properties from: D:\software\apache-jmeter-3.1\bin\user.properties 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Loading system properties from: D:\software\apache-jmeter-3.1\bin\system.properties 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.output_format=xml 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.assertion_results=all 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.bytes=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: file_format.testlog=2.1 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.response_data.on_error=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.response_data=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.samplerData=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.responseHeaders=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.requestHeaders=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.encoding=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.url=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.filename=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.hostname=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.thread_counts=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.sample_count=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Setting JMeter property: jmeter.save.saveservice.idle_time=true 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Copyright (c) 1998-2016 The Apache Software Foundation 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Version 3.1 r1770033 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: java.version=1.8.0_11 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: os.name=Windows 7 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: os.arch=amd64 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: os.version=6.1 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: file.encoding=GBK 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Max memory     =1838153728 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Available Processors =4 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: Default Locale=中文 (中国) 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: JMeter  Locale=中文 (中国) 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: JMeterHome=D:\software\apache-jmeter-3.1 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: user.dir  =D:\software\apache-jmeter-3.1\bin 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: PWD       =D:\software\apache-jmeter-3.1\bin 
+2017/05/03 15:36:31 INFO  - jmeter.JMeter: IP: 192.168.56.1 Name: zwc2012c01-0183 FullName: zwc2012c01-0183.aicai.com 
+2017/05/03 15:36:31 INFO  - jmeter.services.FileServer: Default base='D:\software\apache-jmeter-3.1\bin' 
+2017/05/03 15:36:31 INFO  - jmeter.services.FileServer: Set new base='D:\code\acqc\InterfaceTest\hstongAppInterfaceTest\jmx' 
+2017/05/03 15:36:31 INFO  - jmeter.save.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2 
+2017/05/03 15:36:31 INFO  - jmeter.save.SaveService: Using SaveService properties file encoding UTF-8 
+2017/05/03 15:36:31 INFO  - jmeter.save.SaveService: Using SaveService properties version 3.1 
+2017/05/03 15:36:31 INFO  - jmeter.save.SaveService: All converter versions present and correct 
+2017/05/03 15:36:31 INFO  - jmeter.save.SaveService: Loading file: D:\code\acqc\InterfaceTest\hstongAppInterfaceTest\jmx\TestPlan_Hstong_HKStockTrade_InterfaceTest.jmx 
+2017/05/03 15:36:32 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser 
+2017/05/03 15:36:32 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser 
+2017/05/03 15:36:32 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser 
+2017/05/03 15:36:32 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser 
+2017/05/03 15:36:32 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser 
+2017/05/03 15:36:32 INFO  - jmeter.protocol.http.sampler.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser 
+2017/05/03 15:36:32 INFO  - jmeter.JMeter: Creating summariser <summary> 
+2017/05/03 15:36:32 INFO  - jmeter.engine.StandardJMeterEngine: Running the test! 
+2017/05/03 15:36:32 INFO  - jmeter.samplers.SampleEvent: List of sample_variables: [] 
+2017/05/03 15:36:32 INFO  - jmeter.samplers.SampleEvent: List of sample_variables: [] 
+2017/05/03 15:36:32 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must contain the string: '.functions.' 
+2017/05/03 15:36:32 INFO  - jmeter.engine.util.CompoundVariable: Note: Function class names must not contain the string: '.gui.' 
+2017/05/03 15:36:33 WARN  - jmeter.reporters.ResultCollector: Unexpected EOF trying to find XML end marker in D:\code\acqc\InterfaceTest\hstongAppInterfaceTest\result\result.jtl 
+2017/05/03 15:36:33 INFO  - jmeter.JMeter: 正在运行的测试 (1493796993122) 
+2017/05/03 15:36:33 INFO  - jmeter.engine.StandardJMeterEngine: Starting ThreadGroup: 1 : 华盛港股系统_移动接口测试 
+2017/05/03 15:36:33 INFO  - jmeter.engine.StandardJMeterEngine: Starting 1 threads for group 华盛港股系统_移动接口测试. 
+2017/05/03 15:36:33 INFO  - jmeter.engine.StandardJMeterEngine: Thread will continue on error 
+2017/05/03 15:36:33 INFO  - jmeter.threads.ThreadGroup: Starting thread group number 1 threads 1 ramp-up 1 perThread 1000.0 delayedStart=false 
+2017/05/03 15:36:34 INFO  - jmeter.threads.ThreadGroup: Started thread group number 1 
+2017/05/03 15:36:34 INFO  - jmeter.engine.StandardJMeterEngine: All thread groups have been started 
+2017/05/03 15:36:34 INFO  - jmeter.samplers.SampleResult: Note: Sample TimeStamps are START times 
+2017/05/03 15:36:34 INFO  - jmeter.samplers.SampleResult: sampleresult.default.encoding is set to UTF-8 
+2017/05/03 15:36:34 INFO  - jmeter.samplers.SampleResult: sampleresult.useNanoTime=true 
+2017/05/03 15:36:34 INFO  - jmeter.samplers.SampleResult: sampleresult.nanoThreadSleep=5000 
+2017/05/03 15:36:34 INFO  - jmeter.threads.JMeterThread: Thread started: 华盛港股系统_移动接口测试 1-1 
+2017/05/03 15:36:34 INFO  - jmeter.services.FileServer: Stored: D:\MyProject\JMeter\hstongAppInterfaceTest/resource/已注册测试手机号码.csv 
+2017/05/03 15:36:34 INFO  - jmeter.services.FileServer: Stored: D:\MyProject\JMeter\hstongAppInterfaceTest/testcase/公共接口/发送短信验证码.csv Alias: D:\MyProject\JMeter\hstongAppInterfaceTest/testcase/公共接口/发送短信验证码.csv@68405383 
+2017/05/03 15:36:34 INFO  - jmeter.protocol.http.sampler.HTTPHCAbstractImpl: Local host = zwc2012c01-0183 
+2017/05/03 15:36:34 INFO  - jmeter.protocol.http.sampler.HTTPHC4Impl: HTTP request retry count = 0 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 1_手机号码为空:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 2_手机号码为3位数字:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 3_手机号码为9位数字:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 4_手机号码为12位数字:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"20216","respMsg":"您输入的手机号码不正确","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 5_手机号码无效:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10003","respMsg":"参数错误","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10003","respMsg":"参数错误","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 6_验证码类型为空:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10003","respMsg":"参数错误","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10003","respMsg":"参数错误","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 7_验证码类型无效(为0):test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10003","respMsg":"参数错误","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10003","respMsg":"参数错误","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 8_验证码类型无效（为100）:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"0000","respMsg":"处理成功","result":{},"ok":true}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"0000","respMsg":"处理成功","sid":"","result":{},"ok":true}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 9_发送会员注册验证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"0000","respMsg":"处理成功","result":{},"ok":true},"smsId":"252e77195b4122d1bbb2c025fe88518a"} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"0000","respMsg":"处理成功","sid":"","result":{},"ok":true},"smsId":"0045822e9eae2397286a8f417a6d1c15"} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 10_发送重置登录密码证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10006","respMsg":"未登录","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10006","respMsg":"未登录","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 11_发送找回交易密码验证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10006","respMsg":"未登录","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10006","respMsg":"未登录","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 12_发送修改手机号码第一步验证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10006","respMsg":"未登录","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10006","respMsg":"未登录","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 13_发送修改手机号码第二步验证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10006","respMsg":"未登录","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10006","respMsg":"未登录","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 14_发送添加邮箱验证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10006","respMsg":"未登录","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10006","respMsg":"未登录","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 15_发送修改邮箱验证码:test result is:passed 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"0000","respMsg":"处理成功","result":{},"ok":true}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"0000","respMsg":"处理成功","sid":"","result":{},"ok":true}} 
+2017/05/03 15:36:35 INFO  - jmeter.util.BeanShellTestElement: 16_发送见证人为客户创建账号验证码:test result is:passed 
+2017/05/03 15:36:37 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"10010","respMsg":"重复提交","result":{},"ok":false}}  
+2017/05/03 15:36:37 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"10010","respMsg":"重复提交","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:37 INFO  - jmeter.util.BeanShellTestElement: 16_发送见证人为客户创建账号验证码:test result is:passed 
+2017/05/03 15:36:37 INFO  - jmeter.services.FileServer: Stored: D:\MyProject\JMeter\hstongAppInterfaceTest/testcase/公共接口/验证短信验证码.csv Alias: D:\MyProject\JMeter\hstongAppInterfaceTest/testcase/公共接口/验证短信验证码.csv@68405383 
+2017/05/03 15:36:38 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"9999","respMsg":"未知验证码类型","result":{},"ok":false}} 
+2017/05/03 15:36:38 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"9999","respMsg":"未知验证码类型","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:38 INFO  - jmeter.util.BeanShellTestElement: 1_手机号码为空:test result is:passed 
+2017/05/03 15:36:39 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"9999","respMsg":"未知验证码类型","result":{},"ok":false}} 
+2017/05/03 15:36:39 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"9999","respMsg":"未知验证码类型","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:39 INFO  - jmeter.util.BeanShellTestElement: 2_手机号码无效:test result is:passed 
+2017/05/03 15:36:40 INFO  - jmeter.util.BeanShellTestElement: expectResult is :{"ro":{"respCode":"9999","respMsg":"未知验证码类型","result":{},"ok":false}} 
+2017/05/03 15:36:40 INFO  - jmeter.util.BeanShellTestElement: actualResult is :{"ro":{"respCode":"9999","respMsg":"未知验证码类型","sid":"","result":{},"ok":false}} 
+2017/05/03 15:36:40 INFO  - jmeter.util.BeanShellTestElement: 3_验证码类型为空:test result is:passed 
+2017/05/03 15:36:41 INFO  - jmeter.reporters.ResultCollector: Shutdown hook started 
+2017/05/03 15:36:41 INFO  - jmeter.reporters.ResultCollector: Shutdown hook ended 

@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,securityCode,securityName,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,永顺控股香港,"{""ro"":{""respCode"":""9999"",""respMsg"":""参数不能有空值"",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":false}}",N,,
+2,股票代码错误,18421.hk,永顺控股香港,"{""ro"":{""respCode"":""9999"",""respMsg"":"""",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":false}}",N,,
+3,股票名称为空,08421.hk,,"{""ro"":{""respCode"":""9999"",""respMsg"":""参数不能有空值"",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":false}}",N,,
+4,股票名称错误,08421.hk,永顺控股,"{""ro"":{""respCode"":""9999"",""respMsg"":"""",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":false}}",N,,
+5,股票名称与股票代码不匹配,08421.hk,中国新经济投资,"{""ro"":{""respCode"":""9999"",""respMsg"":"""",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":false}}",N,,
+6,查询非新股的可申购数量失败,00080.hk,中国新经济投资,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":true}}",N,,
+7,成功查询新股的可申购数量,08421.hk,永顺控股香港,"{""data"":[{""amount"":5000,""money"":1570.00},{""amount"":10000,""money"":3010.00}],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""0537d1857d74483c988706d7cbd2f88b-1710"",""result"":{},""ok"":true}}",N,,

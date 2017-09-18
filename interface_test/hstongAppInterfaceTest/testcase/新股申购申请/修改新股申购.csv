@@ -1,0 +1,9 @@
+testCaseNo,testCaseName,applyId,applyAmount,password,agreeChangeAmount,expectResult,isSkipped,testSteps,remark
+1,申购数量为空,动态获取,,123456,false,"{""ro"":{""respCode"":""9999"",""respMsg"":""请输入申购的数量"",""sid"":""bb0660ab05a045b9bc8a3f2ca50afc64-1710"",""result"":{},""ok"":false}}",N,,
+2,申购数量为0,动态获取,0,123456,false,"{""ro"":{""respCode"":""9999"",""respMsg"":""输入的申请股票数量不对"",""sid"":""bb0660ab05a045b9bc8a3f2ca50afc64-1710"",""result"":{},""ok"":false}}",N,,
+3,申购数量不是每手的整数倍,动态获取,2500,123456,false,"{""ro"":{""respCode"":""9999"",""respMsg"":""申购数量不正确"",""sid"":""9e97957f590d456a9b48f9d7dc3cf518-1710"",""result"":{},""ok"":false}}",N,,
+4,申购数量不是可申购范围内的数据,动态获取,30000,123456,false,"{""ro"":{""respCode"":""9999"",""respMsg"":""申购数量不正确"",""sid"":""9e97957f590d456a9b48f9d7dc3cf518-1710"",""result"":{},""ok"":false}}",N,,
+5,券商登录系统密码为空,动态获取,10000,,false,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""9e97957f590d456a9b48f9d7dc3cf518-1710"",""result"":{},""ok"":true}}",N,,
+6,券商登录系统密码错误,动态获取,5000,654321,false,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码错误"",""sid"":""4b34d80b87144f649ace702bf12dc0ac-1710"",""result"":{},""ok"":false}}",N,,
+7,是否同意更改股数数值为空,动态获取,10000,123456,,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+8,成功修改新股申购信息,动态获取,5000,123456,true,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""6ff9fef7b7c3490a9124a449fa72cac6-1710"",""result"":{},""ok"":true}}",N,,

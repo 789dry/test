@@ -1,0 +1,3 @@
+testCaseNo,testCaseName,exchangeType,expectResult,isSkipped,testSteps,remark
+1,交易类型为空,,"{""result"":[],""code"":""00000""}",N,,
+2,交易类型错误,A,"{""result"":[],""code"":""00000""}",N,,

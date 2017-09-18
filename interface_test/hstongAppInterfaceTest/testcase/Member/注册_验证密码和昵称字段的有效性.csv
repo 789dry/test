@@ -1,0 +1,12 @@
+testCaseNo,testCaseName,password,nickName,expectResult,isSkipped,testSteps,remark
+1,密码为空,,nickName,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码设置太简单"",""result"":{},""ok"":false}}",N,,
+2,密码只含有数字,12345678,nickName,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码设置太简单"",""result"":{},""ok"":false}}",N,,
+3,密码只含有特殊字符,!@#$%^&&,nickName,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码设置太简单"",""result"":{},""ok"":false}}",N,,
+4,密码只含有字母,abcdefg,nickName,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码设置太简单"",""result"":{},""ok"":false}}",N,,
+5,密码长度大于20,abcdefgabcabcdefgabc1,nickName,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码设置太简单"",""result"":{},""ok"":false}}",N,,
+6,密码长度小于6,12345,nickName,"{""ro"":{""respCode"":""9999"",""respMsg"":""密码设置太简单"",""result"":{},""ok"":false}}",N,,
+7,昵称为空,123abc,,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证码不存在"",""result"":{},""ok"":false}}",N,,
+8,昵称长度大于32个字符,124abc,昵称长a度大于32个字符昵称长度大于,"{""ro"":{""respCode"":""9999"",""respMsg"":""昵称为1-16个汉字或32个英文字符"",""result"":{},""ok"":false}}",N,,
+9,昵称含有空格,125abc,你懂 的,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证码不存在"",""result"":{},""ok"":false}}",N,,
+10,昵称为纯数字,126abc,789000,"{""ro"":{""respCode"":""9999"",""respMsg"":""验证码不存在"",""result"":{},""ok"":false}}",N,,
+11,昵称已经存在,127abc,100325,"{""ro"":{""respCode"":""9999"",""respMsg"":""昵称已被占用"",""result"":{},""ok"":false}}",N,,

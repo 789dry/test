@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<project name="hstongAppInterfaceTest" basedir="." default="all">
+    <description>
+        Sample build file for use with ant-jmeter.jar
+        See http://www.programmerplanet.org/pages/projects/jmeter-ant-task.php
+    To run a test and create the output report:
+        ant -Dtest=script
+    To run a test only:
+        ant -Dtest=script run
+    To run report on existing test output
+        ant -Dtest=script report
+    The "script" parameter is the name of the script without the .jmx suffix.
+    Additional options:
+        -Dshow-data=y - include response data in Failure Details
+        -Dtest.path=xyz - path to test file(s) (default basedir).
+                         N.B. Ant interprets relative paths against the build file
+        -Djmeter.home=.. - path to JMeter home directory (defaults to parent of this build file)
+        -Dtest.report.title="My Report" - title for html report (default is 'Load Test Results')
+    </description>
+	<!-- Read the test properties from build.propertis -->
+	<property file="build.properties" />
+    <!-- <property environment="env"/> 必须放在最前面，可以确保能使用到编译平台的环境变量 -->
+    <property environment="env" />
+	<property name="jmeter.home" value="${env.JMETER_HOME}"/>
+	<property name="jmeter.result.style" value="jmeter-results-report-interfacetest.xsl"/>
+	<property name="test.path" value="${basedir}"/>
+	<property name="test.lib.dir" value="${basedir}/lib"/>
+	<property name="test.testplan.path" value="${basedir}/jmx"/>
+	<property name="test.report.path" value="${basedir}/report"/>
+	<property name="test.result.path" value="${basedir}/result"/>
+	<property name="test.result.filename" value="result"/>
+	<property name="test.dashboard.path" value="${basedir}/dashboard"/>
+	<property name="test.resource.path" value="${basedir}/resource"/>
+	<property name="test.log.path" value="${basedir}/log"/>
+	<property name="test.report.title" value="HStong Interface Test Results"/>
+    <!-- Should report include response data for failures? -->
+    <property name="show-data" value="y"/>
+    <property name="format" value="2.1"/>
+    <condition property="style_version" value="_21">
+        <equals arg1="${format}" arg2="2.1"/>
+    </condition>
+    <condition property="funcMode">
+        <equals arg1="${show-data}" arg2="y"/>
+    </condition>
+    <condition property="funcMode" value="false">
+      <not>
+        <equals arg1="${show-data}" arg2="y"/>
+      </not>
+    </condition>
+	<!-- set classpath with the path containing jars -->
+    <path id="jmeter.classpath">
+		<fileset dir="${test.lib.dir}">
+				<include name="*.jar"/>
+		</fileset>
+    </path>
+	<pathconvert pathsep=":"  property="jmeter.classpath" refid="jmeter.classpath"></pathconvert>
+	
+	<!-- jmeter ant task -->
+	<taskdef
+	    name="jmeter"
+	    classpathref="jmeter.classpath"
+	    classname="org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"/>
+    
+    <!-- call all tasks in this sequence -->
+	<target name="all" depends="clean,show-test-properties,run,generate-test-report,generate-dashboard"/>
+   
+    <!-- clean project by removing all the temp files -->
+	<target name="clean">
+		<delete dir="${test.report.path}"/>
+	    <delete dir="${test.dashboard.path}"/>
+		<delete dir="${test.log.path}"/>		
+	</target>
+    <!-- show test properties -->
+	<target name="show-test-properties">
+		<echo>JMETER_HOME		  : ${jmeter.home}</echo>
+		<echo>TEST_PATH			  : ${test.testplan.path}</echo>
+		<echo>THREADGROUP_COUNT	  : ${threadgroup.count}</echo>
+		<echo>THREADGROUP_RAMPUP  : ${threadgroup.rampup}</echo>
+		<echo>THREADGROUP_DURATION: ${threadgroup.duration}</echo>
+	</target>
+   
+    <target name="run" depends="show-test-properties"><!-- clean,,copy-libs -->
+		<mkdir  dir="${test.report.path}"/>
+		<mkdir  dir="${test.log.path}"/>
+		<jmeter
+			jmeterhome="${jmeter.home}"
+		    testplan ="${test.testplan.path}/${test.testplan.file}"
+		    resultlog="${test.result.path}/${test.result.filename}.jtl"
+			jmeterlogfile="${test.log.path}/jmeter.log">
+        <!--
+            <jvmarg value="-Xincgc"/>
+            <jvmarg value="-Xmx128m"/>
+            <jvmarg value="-Dproperty=value"/>
+            <jmeterarg value="-qextra.properties"/>
+			<jmeter
+            jmeterhome="${jmeter.home}"
+            resultlog="${test.result.path}/${test.result.filename}.jtl">
+			<testplans dir="${test.testplan.path}" includes="*.jmx" />
+			<property name="TestPlanDir" value="${basedir}/"/>
+        -->
+	    <jmeterarg value="-JTestPlanDir=${basedir}"/>
+            <!-- Force suitable defaults -->
+            <property name="jmeter.save.saveservice.output_format" value="xml"/>
+            <property name="jmeter.save.saveservice.assertion_results" value="all"/>
+            <property name="jmeter.save.saveservice.bytes" value="true"/>
+            <property name="file_format.testlog" value="${format}"/>
+            <property name="jmeter.save.saveservice.response_data.on_error" value="${funcMode}"/>
+			<!-- Force suitable defaults -->
+			<property name="jmeter.save.saveservice.response_data" value="true"/>
+			<property name="jmeter.save.saveservice.samplerData" value="true"/>
+			<property name="jmeter.save.saveservice.responseHeaders" value="true"/>
+			<property name="jmeter.save.saveservice.requestHeaders" value="true"/>
+			<property name="jmeter.save.saveservice.encoding" value="true"/>
+			<property name="jmeter.save.saveservice.url" value="true"/>
+			<property name="jmeter.save.saveservice.filename" value="true"/>
+			<property name="jmeter.save.saveservice.hostname" value="true"/>
+			<property name="jmeter.save.saveservice.thread_counts" value="true"/>
+			<property name="jmeter.save.saveservice.sample_count" value="true"/>
+			<property name="jmeter.save.saveservice.idle_time" value="true"/>
+        </jmeter>
+    </target>
+
+    <property name="lib.dir" value="${jmeter.home}/lib"/>
+	
+	<!-- Copy libs if needed-->
+    <target name="copy-libs">
+	    <copy todir="${lib.dir}" >  
+			<fileset dir="${test.path}/lib" includes="**"/>
+	    </copy>
+    </target>
+    <!-- Use xalan copy from JMeter lib directory to ensure consistent processing with Java 1.4+ -->
+    <path id="xslt.classpath">
+        <fileset dir="${test.lib.dir}" includes="xalan*.jar"/>
+        <fileset dir="${test.lib.dir}" includes="serializer*.jar"/>
+    </path>
+
+    <target name="generate-test-report" depends="xslt-report,copy-images">
+        <echo>Report generated at ${report.datestamp}</echo>
+    </target>
+
+    <target name="xslt-report" depends="_message_xalan">
+        <tstamp><format property="report.datestamp" pattern="yyyy/MM/dd HH:mm"/></tstamp>
+        <xslt
+            classpathref="xslt.classpath"
+            force="true"
+            in="${test.result.path}/${test.result.filename}.jtl"
+            out="${test.report.path}/${test.result.filename}.html"
+            style="${test.resource.path}/${jmeter.result.style}">
+            <param name="showData" expression="${show-data}"/>
+            <param name="titleReport" expression="${test.report.title}"/>
+            <param name="dateReport" expression="${report.datestamp}"/>
+        </xslt>
+    </target>
+
+    <!-- Copy report images if needed depends="verify-images" unless="samepath"-->
+    <target name="copy-images">
+        <copy file="${test.resource.path}/expand.png" tofile="${test.report.path}/expand.png"/>
+        <copy file="${test.resource.path}/collapse.png" tofile="${test.report.path}/collapse.png"/>
+    </target>
+
+	<target name="generate-dashboard">
+	    <mkdir  dir="${test.dashboard.path}"/>
+	    <java jar="${jmeter.home}/bin/ApacheJMeter.jar" fork="true">
+			<arg value="-g" />
+			<arg value="${test.result.path}/dashboard.csv" />
+			<arg value="-o" />
+			<arg value="${test.dashboard.path}" />
+	    </java>	
+		<!--
+		<jmeter
+            jmeterhome="${jmeter.home}"
+			resultlog="${test.path}/report/dashboard.jtl">
+			<jmeterarg value="-g"/>
+			<jmeterarg value="${test.path}/report/${test}.jtl"/>
+			<jmeterarg value="-e"/>
+			<jmeterarg value="-o"/>
+			<jmeterarg value="${test.dashboard.path}"/>
+			
+			<testplans dir="${test.path}/jmx" includes="*.jmx" />
+            <property name="jmeter.save.saveservice.output_format" value="xml"/>
+            <property name="jmeter.save.saveservice.assertion_results" value="all"/>
+            <property name="jmeter.save.saveservice.bytes" value="true"/>
+            <property name="file_format.testlog" value="${format}"/>
+            <property name="jmeter.save.saveservice.response_data.on_error" value="${funcMode}"/>
+			<property name="jmeter.save.saveservice.response_data" value="true"/>
+			<property name="jmeter.save.saveservice.samplerData" value="true"/>
+			<property name="jmeter.save.saveservice.responseHeaders" value="true"/>
+			<property name="jmeter.save.saveservice.requestHeaders" value="true"/>
+			<property name="jmeter.save.saveservice.encoding" value="true"/>
+			<property name="jmeter.save.saveservice.url" value="true"/>
+			<property name="jmeter.save.saveservice.filename" value="true"/>
+			<property name="jmeter.save.saveservice.hostname" value="true"/>
+			<property name="jmeter.save.saveservice.thread_counts" value="true"/>
+			<property name="jmeter.save.saveservice.sample_count" value="true"/>
+			<property name="jmeter.save.saveservice.idle_time" value="true"/>
+		</jmeter>
+		-->
+	</target>
+    <!-- Check that the xalan libraries are present -->
+    <condition property="xalan.present">
+          <and>
+              <!-- No need to check all jars; just check a few -->
+            <available classpathref="xslt.classpath" classname="org.apache.xalan.processor.TransformerFactoryImpl"/>
+            <available classpathref="xslt.classpath" classname="org.apache.xml.serializer.ExtendedContentHandler"/>
+          </and>
+    </condition>
+
+    <target name="_message_xalan" unless="xalan.present">
+          <echo>Cannot find all xalan and/or serialiser jars</echo>
+        <echo>The XSLT formatting may not work correctly.</echo>
+        <echo>Check you have xalan and serializer jars in ${lib.dir}</echo>
+    </target>  
+</project>

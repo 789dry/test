@@ -1,0 +1,83 @@
+//用于设置接口的相关参数
+import java.util.HashMap;
+import java.util.Map;
+import java.time.Instant;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
+import com.hstong.open.api.OpenAPInterface;
+
+	//是否改变传参进行测试
+	String isChangeParams = vars.get("isChangeParams");
+	//set sign params and interface buzz params
+	Map params = new HashMap();
+	String buzz = vars.get("buzz");
+	//log.info("buzz is:"+buzz);
+	String strTemp = buzz.replaceAll("\\s", "").replaceAll("^\\{|\\}$", "").replaceAll("\"", "");//去掉空白、大括号和双引号
+    String[] array = strTemp.split(",");
+    for (int i = 0; i < array.length; i+=1){
+		String[] parts = array[i].split(":");
+		String key = parts[0];
+		String value = "";
+		if(parts.length == 2){
+		    value = parts[1];
+		}
+		
+		if("password".equals(key)){
+			String stock_password_encrypt = OpenAPInterface.getEncryptedPwd(value);
+			params.put(key, stock_password_encrypt);
+			sampler.addArgument(key,stock_password_encrypt);
+		}else{
+			if(i==0 && "Y".equals(isChangeParams)){
+				params.put(key,"test");
+				vars.put("isChangeParams","N");
+			}else{
+				params.put(key,value);
+			}
+			sampler.addArgument(key,value);
+		}
+		//log.info(i+"---key is:"+key+",value is:"+value);
+    }
+	
+	String token = vars.get("token");
+	if(token != null && !"".equals(token) && buzz.indexOf("token") == -1){
+		//是否需要token参数,对于登录授权接口不需要传token参数的时候生效,默认情况下是需要的,如果需要请赋值
+		String isNeedTokenParam = vars.get("isNeedTokenParam");
+		log.info("isNeedTokenParam2222222222:"+isNeedTokenParam);
+		if(!"No".equals(isNeedTokenParam)){
+			params.put("token", token);
+			sampler.addArgument("token", token);
+			log.info("token:"+token);
+		}
+		vars.put("isNeedTokenParam","Yes");
+	}
+	
+	/*
+	String token = vars.get("token");
+	if(token != null && !"".equals(token) && buzz.indexOf("token") == -1){
+		params.put("token", token);
+		sampler.addArgument("token", token);
+	}
+	*/
+	//set client key params
+	String client_key="";
+	if(buzz.indexOf("client_key") == -1){
+		client_key = vars.get("appid");
+		//vars.put("client_key",client_key);
+		params.put("client_key", client_key);
+		sampler.addArgument("client_key", client_key);
+	}else{
+		client_key = params.get("client_key");
+	}
+	
+	//set sign time params
+	if(buzz.indexOf("sign_time") == -1){
+		String sign_time = Instant.now().getEpochSecond()+"";
+		//vars.put("sign_time",sign_time);
+		params.put("sign_time",sign_time);
+		sampler.addArgument("sign_time", sign_time);
+	}
+
+	String sign = OpenAPInterface.getSign(client_key,params);
+	//vars.put("sign", sign);
+	sampler.addArgument("sign", sign);
+	//log.info("sign_time is:"+sign_time+",sign is:"+sign);

@@ -1,0 +1,7 @@
+testCaseNo,testCaseName,code,dataType,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,10000,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1497411842057,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+2,股票代码不存在,10080.hk,10000,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1497411842057,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+3,股票类型为空,00080.hk,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+4,股票类型错误,00080.hk,30000,{},N,,
+5,股票类型与股票代码不一致,00080.hk,20000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+6,成功获取综合损益表信息,00080.hk,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,

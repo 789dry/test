@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,exchangeType,stockCode,entrustPrice,expectResult,isSkipped,testSteps,remark
+1,交易类型为空,,700,270.6,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+2,交易类型错误,A,700,270.6,"{""data"":"""",""ro"":{""respCode"":""-61"",""respMsg"":""安全码校验失败"",""sid"":""28d5a4cbd9b44dcdbcba477317c3da68-1710"",""result"":{},""ok"":false}}",N,,
+3,股票代码为空,K,,270.6,"{""data"":"""",""ro"":{""respCode"":""-61"",""respMsg"":""查询该市场股票代码不存在"",""sid"":""28d5a4cbd9b44dcdbcba477317c3da68-1710"",""result"":{},""ok"":false}}",N,,
+4,股票代码错误,K,19700,270.6,"{""data"":"""",""ro"":{""respCode"":""-61"",""respMsg"":""查询该市场股票代码不存在"",""sid"":""28d5a4cbd9b44dcdbcba477317c3da68-1710"",""result"":{},""ok"":false}}",N,,
+5,委托价格为空,K,700,,"{""data"":0,""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""28d5a4cbd9b44dcdbcba477317c3da68-1710"",""result"":{},""ok"":true}}",N,,
+6,委托价格低于当前市场价格,,700,0.6,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,
+7,委托价格太高,K,700,9999,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,

@@ -1,0 +1,12 @@
+testCaseNo,testCaseName,size,sinceId,contentId,expectResult,isSkipped,testSteps,remark
+1,页面大小为空,,0,0,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+2,页面大小为负数,-1,0,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""size参数值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+3,页面大小为0,0,0,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,页面大小超出新闻数量,9999,0,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""size参数值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+5,sinceId为空,5,,0,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+6,sinceId为负数,5,-1,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""sinceId参数值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+7,sinceId与combId不相符,5,1,0,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""a19f16f47eba471fbf4321a12d24e099-1381"",""sign"":"""",""timestamp"":1494582706929,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+8,contentId为空,5,0,,"{""ro"":{""respCode"":""9999"",""respMsg"":""contentId参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+9,contentId为负数,5,0,-1,"{""ro"":{""respCode"":""9999"",""respMsg"":""contentId参数值非法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+10,contentId不存在,5,0,99999,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""14157ad66d7a489890f9397b236a8477-1381"",""sign"":"""",""timestamp"":1494903899285,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+11,成功获取资讯首页组合资讯接口（APP1.4后）信息,2,0,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

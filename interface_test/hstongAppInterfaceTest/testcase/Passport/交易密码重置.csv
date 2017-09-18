@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,newPwd,expectResult,isSkipped,testSteps,remark
+1,新的交易密码为空,,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""3c2377209d7e4b338e620ee0e6665e97-1710"",""sign"":"""",""timestamp"":1495598195167,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+2,新的交易密码小于6位,12345,"{""ro"":{""respCode"":""9999"",""respMsg"":""请输入6位数字密码"",""sid"":""09d7496070af4cdc94df06ad27c813db-1710"",""result"":{},""ok"":false}}",N,,
+3,新的交易密码大于6位,1234567,"{""ro"":{""respCode"":""9999"",""respMsg"":""请输入6位数字密码"",""sid"":""3c2377209d7e4b338e620ee0e6665e97-1710"",""result"":{},""ok"":false}}",N,,
+4,新的交易密码不全是数字,12345a,"{""ro"":{""respCode"":""9999"",""respMsg"":""请输入6位数字密码"",""sid"":""3c2377209d7e4b338e620ee0e6665e97-1710"",""result"":{},""ok"":false}}",N,,
+5,新的交易密码重置成功,123456,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":""b59ea1fb63ce4783a2159e7300643dcf-1710"",""result"":{},""ok"":true}}",N,,

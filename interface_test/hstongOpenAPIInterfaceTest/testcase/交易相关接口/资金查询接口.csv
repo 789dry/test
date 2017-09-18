@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,exchangeType,stockCode,expectResult,isSkipped,testSteps,remark
+1,交易类型为空,,00080,"{""result"":[],""code"":""00000""}",N,,
+2,交易类型错误,A,00080,"{""result"":[],""code"":""00000""}",N,,
+3,股票代码为空,K,,"{""result"":[],""code"":""00000""}",N,,
+4,股票代码错误,K,10080,"{""result"":[],""code"":""00000""}",N,,
+5,股票代码不是用户持仓股票,K,00700,"{""result"":[],""code"":""00000""}",N,,

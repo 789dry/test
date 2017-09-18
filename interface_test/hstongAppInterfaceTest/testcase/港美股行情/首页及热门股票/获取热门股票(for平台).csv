@@ -1,0 +1,10 @@
+testCaseNo,testCaseName,hkLimit,usLimit,expectResult,isSkipped,testSteps,remark
+1,港股股票个数为空,,10,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+2,港股股票个数为0,0,10,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+3,港股股票个数为负数,-10,10,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1497585428984,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+4,港股股票个数超出总数量,9999,10,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+5,美股股票个数为空,10,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+6,美股股票个数为0,10,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+7,美股股票个数为负数,10,-10,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1497585428984,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+8,美股股票个数超出总数量,10,9999,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+9,成功获取热门股票信息(for 平台),10,10,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,

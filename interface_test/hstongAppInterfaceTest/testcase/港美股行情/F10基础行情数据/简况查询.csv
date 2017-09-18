@@ -1,0 +1,7 @@
+testCaseNo,testCaseName,code,dataType,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+2,股票代码不存在,10080.hk,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+3,股票类型为空,00080.hk,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+4,股票类型错误,00080.hk,30000,{},N,,
+5,股票类型与股票代码不一致,00080.hk,20000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+6,成功获取股票的简况,00080.hk,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,

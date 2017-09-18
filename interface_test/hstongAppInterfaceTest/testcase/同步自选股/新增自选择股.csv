@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,addStocks,expectResult,isSkipped,testSteps,remark
+1,股票编码字符串为空,,"{""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+2,股票编码字符串无效,CPHI.HK|10000,"{""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+3,用户未登录调用接口,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,
+4,成功添加一个自选股,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,
+5,成功添加多个自选股,,"{“ro“:{“ok“:false,“respCode“:“10006“,“respMsg“:“未登录“,“result“:{},“sid“:““}}",N,,

@@ -1,0 +1,6 @@
+testCaseNo,testCaseName,type,ctype,expectResult,isSkipped,testSteps,remark
+1,type数值为空,,1,"{""ro"":{""respCode"":""10003"",""respMsg"":""参数错误"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,type数值错误,0,1,"{""ro"":{""respCode"":""10003"",""respMsg"":""参数错误"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+3,ctype数值为空,3,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,ctype数值错误,3,0,"{""ro"":{""respCode"":""10003"",""respMsg"":""参数错误"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+5,成功获取配置信息,3,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

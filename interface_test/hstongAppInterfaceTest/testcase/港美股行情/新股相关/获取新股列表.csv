@@ -1,0 +1,5 @@
+testCaseNo,testCaseName,dataType,expectResult,isSkipped,testSteps,remark
+1,股票类型为空,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+2,股票类型无效,1111,{},N,,
+3,获取港股股票列表,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+4,获取美股股票列表,20000,{},N,,

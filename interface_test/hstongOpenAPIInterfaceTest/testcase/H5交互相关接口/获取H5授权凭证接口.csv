@@ -1,0 +1,3 @@
+testCaseNo,testCaseName,token,expectResult,isSkipped
+1,token为空,,"{""code"":""50002"",""error"":""交易未登录""}",N
+2,token值错误,6db8c222f6bd439687415ec3535c8b8e,"{""code"":""10106"",""error"":""授权token失效""}",N

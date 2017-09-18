@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,configType,expectResult,isSkipped,testSteps,remark
+1,配置类型为空,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+2,配置类型数值错误,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,成功获取主APP配置接口信息,6,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

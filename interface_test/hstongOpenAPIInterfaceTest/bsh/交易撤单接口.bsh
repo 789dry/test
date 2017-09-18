@@ -1,0 +1,17 @@
+String entrustStatus = vars.get("entrustStatus_1");
+boolean isTestOK = false;
+log.info("----------entrustStatus----"+entrustStatus);
+if("6".equals(entrustStatus)){
+	isTestOK = true;
+}
+//设置测试结果
+if(!isTestOK){
+	SampleResult.setSuccessful(false);
+	SampleResult.setResponseMessage("交易撤单接口数据校验失败!!!!!!");
+	log.info("交易撤单接口数据校验失败!!!!!!");
+}else{
+	SampleResult.setSuccessful(true);
+	SampleResult.setResponseMessage("交易撤单接口数据校验成功!!!!!!");
+	log.info("交易撤单接口数据校验成功!!!!!!");
+}	
+

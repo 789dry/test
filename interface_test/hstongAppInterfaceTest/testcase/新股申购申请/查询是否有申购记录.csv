@@ -1,0 +1,7 @@
+testCaseNo,testCaseName,securityCode,dataType,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+2,股票代码错误,18421.hk,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,股票类型为空,08421.hk,,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+4,股票类型错误,08421.hk,30000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+5,股票类型与股票代码不一致,08421.hk,20000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,成功查询股票申购记录,08421.hk,10000,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

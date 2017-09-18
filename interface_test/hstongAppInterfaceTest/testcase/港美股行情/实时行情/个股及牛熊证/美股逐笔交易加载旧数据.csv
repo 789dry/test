@@ -1,0 +1,13 @@
+testCaseNo,testCaseName,code,limit,time,tradeNumber,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,10,20161024185524409,7066,"{""ro"":{""respCode"":""9999"",""respMsg"":""代码id不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,股票代码错误,00700.hk,10,20161024185524409,7066,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""5aa4952e5ad842c5a01a5cb73498b662-1710"",""sign"":"""",""timestamp"":1498462573577,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+3,页面显示数量为空,BABA,,20161024185524409,7066,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,页面显示数量为负数,BABA,-10,20161024185524409,7066,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":""393771e4278e4bd2a4b59a44f2398aad-1710"",""sign"":"""",""timestamp"":1498464653242,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+5,页面显示数量为0,BABA,0,20161024185524409,7066,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,页面显示数量大于总数量,BABA,9999,20161024185524409,7066,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+7,交易时间为空,BABA,10,,7066,"{""ro"":{""respCode"":""9999"",""respMsg"":""time 不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+8,交易时间格式错误,BABA,10,2016102418552440911,7066,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+9,交易时间大于当前时间,BABA,10,20991024185524409,7066,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+10,交易编号为空,BABA,10,20161024185524409,,"{""ro"":{""respCode"":""9999"",""respMsg"":""tradeNumber 不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+11,交易编号错误,BABA,10,20161024185524409,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+12,成功查询美股逐笔交易加载旧数据信息,BABA,10,20161024185524409,7066,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

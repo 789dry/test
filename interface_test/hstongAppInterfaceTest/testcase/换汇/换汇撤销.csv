@@ -1,0 +1,3 @@
+testCaseNo,testCaseName,id,expectResult,isSkipped,testSteps,remark
+1,换汇id为空,,"{""ro"":{""respCode"":""9999"",""respMsg"":""id参数非法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,换汇id不存在,1,"{""ro"":{""respCode"":""9999"",""respMsg"":""找不到换汇记录"",""sid"":"""",""result"":{},""ok"":false}}",N,,

@@ -1,0 +1,9 @@
+testCaseNo,testCaseName,offset,limit,expectResult,isSkipped,testSteps,remark
+1,偏移量为空,,5,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+2,偏移量为负数,-1,5,"{""ro"":{""respCode"":""9999"",""respMsg"":""offset值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+3,偏移量超出资讯的总数量,99999,5,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,分页数据数目为空,0,,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+5,分页数据数目为0,0,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""limit值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+6,分页数据数目为负数,0,-1,"{""ro"":{""respCode"":""9999"",""respMsg"":""limit值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+7,分页数据数目超出资讯的总数量,0,9999,"{""ro"":{""respCode"":""9999"",""respMsg"":""limit值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+8,成功获取新浪财经7*24小时资讯信息,0,5,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",,,

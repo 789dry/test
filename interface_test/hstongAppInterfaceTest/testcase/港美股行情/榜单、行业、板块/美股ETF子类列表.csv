@@ -1,0 +1,13 @@
+testCaseNo,testCaseName,etfMainTypeCode,offset,limit,order,expectResult,isSkipped,testSteps,remark
+1,美股ETF主类代码为空,,0,10,ASC,"{""ro"":{""respCode"":""9999"",""respMsg"":""etfMainTypeCode参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,美股ETF主类代码错误,0,0,10,ASC,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,分页偏移量为空,101,,10,ASC,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+4,分页偏移量为负数,101,-10,10,ASC,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+5,分页偏移量大于总的数据量,101,9999,10,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,页面显示数量为空,101,0,,ASC,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+7,页面显示数量为负数,101,0,-10,ASC,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+8,页面显示数量为0,101,0,0,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+9,页面显示数量大于总的数据量,101,0,9999,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+10,排序方式为空,101,0,10,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+11,排序方式错误,101,0,10,ASCB,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+12,成功获取美股ETF子类列表信息,101,0,10,ASC,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

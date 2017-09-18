@@ -1,0 +1,9 @@
+testCaseNo,testCaseName,securityCode,dataType,ignoreBroker,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,10000,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""rankType参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,股票代码错误,10080.hk,10000,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true},""status"":""BMP""}",N,,
+3,股票类型为空,00080.hk,,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+4,股票类型错误,00080.hk,30000,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+5,股票类型与股票代码不匹配,00080.hk,20000,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+6,忽略买卖盘经纪数值为空,00080.hk,10000,,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+7,忽略买卖盘经纪数值错误,00080.hk,10000,2,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+8,成功查询某只个股、ETF行情信息,00080.hk,10000,1,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

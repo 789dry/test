@@ -1,0 +1,5 @@
+testCaseNo,testCaseName,id,expectResult,isSkipped,testSteps,remark
+1,换汇id为空,,"{""code"":""10003"",""error"":""参数错误""}",N,,
+2,换汇id不存在,0,"{""code"":""50008"",""error"":""找不到换汇记录""}",N,,
+3,换汇id为负数,-1,"{""code"":""10003"",""error"":""参数错误""}",N,,
+4,参数换汇id不为int型,a,"{""code"":""10003"",""error"":""参数错误""}",N,,

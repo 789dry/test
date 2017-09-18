@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,size,sinceId,expectResult,isSkipped,testSteps,remark
+1,专题组合数据数量为空,,0,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+2,专题组合数据数量负数,-1,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""size参数值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+3,专题组合数据数量为0,0,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""size参数值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+4,专题组合数据数量超出数据库中的数量,9999,0,"{""ro"":{""respCode"":""9999"",""respMsg"":""size参数值不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+5,sinceId为空,10,,"{""ro"":{""ok"":false,""respCode"":""10003"",""respMsg"":""参数错误"",""result"":{},""sid"":""""}}",N,,
+6,sinceId为负数,10,-1,"{""ro"":{""respCode"":""9999"",""respMsg"":""sinceId参数不合法"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+7,sinceId与combId不相符,10,999,"{""data"":[],""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,expectResult,isSkipped,testSteps,remark
+1,用户未登录调用接口,"{""ro"":{""ok"":false,""respCode"":""10006"",""respMsg"":""未登录"",""result"":{},""sid"":""""}}",N,,
+2,未绑定用户查询绑定信息,"{""bindInfo"":{""qq"":false,""weixin"":false,""weibo"":false},""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,
+3,已绑定用户查询绑定信息,"{""bindInfo"":{""qq"":true,""weixin"":false,""weibo"":false},""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,

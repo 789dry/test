@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,securityCode,expectResult,isSkipped,testSteps,remark
+1,股票代码为空,,"{""ro"":{""respCode"":""9999"",""respMsg"":""securityCode参数不能为空"",""sid"":"""",""result"":{},""ok"":false}}",N,,
+2,股票代码错误,10080.hk,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true},""status"":""BMP""}",N,,
+3,成功查询港股买卖经纪信息,00700.HK,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""sid"":"""",""result"":{},""ok"":true}}",N,,

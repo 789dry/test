@@ -1,0 +1,86 @@
+import com.hstong.open.api.ResponseDataValidator;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.Arrays;
+/**
+默认预期结果为处理成功状态，如果为其他状态请传预期结果进入
+参数：
+第一个参数为expectResult,表示预期测试结果
+第二个参数为断言类型,0:表示根据预期结果中的ro字段进行断言，1：表示使用整个字段来进行断言
+2：表示使用后面提供的字段来进行断言
+3: 使用整个返回数据并且过滤后面相关的字段后进行断言
+*/
+
+String expectResult =  vars.get("expectResult");
+String actualResult =  prev.getResponseDataAsString();
+String isSkipped = vars.get("isSkipped");
+boolean isPassed  = false;
+String []defaultFilterFileds = {"sid","token"};
+int assertType = 0;
+String testCaseNo = vars.get("testCaseNo");
+
+if("".equals(testCaseNo) || testCaseNo == null){
+	log.info("测试用例:"+vars.get("httpRequestName"));
+}else{
+	log.info("测试用例:"+vars.get("testCaseNo")+"_"+vars.get("testCaseName"));
+}
+//判断测试用例是否跳过执行
+if("Y".equals(isSkipped) || isSkipped == "Y"){
+	String errormsg = "该测试用例跳过执行";
+	prev.setSuccessful(false);
+	prev.setResponseMessage(errormsg);
+	log.info("test result is:failed!!!!");
+	log.info("error msg is:"+errormsg);
+}else{
+	if(null == expectResult || "" == expectResult){
+		expectResult = "{\"ro\":{\"respCode\":\"0000\",\"respMsg\":\"处理成功\",\"sid\":\"\",\"result\":{},\"ok\":true}}";
+	}
+	log.info("expectResult is :"+expectResult);
+	log.info("actualResult is :"+actualResult);
+	if(bsh.args.length > 1){
+		assertType = Integer.parseInt(bsh.args[1]);
+	}
+	try{
+		switch(assertType){
+			case 0:
+				isPassed = ResponseDataValidator.validateJsonResponseDataByRo(expectResult, actualResult);
+				break;
+			case 1:
+				//根据用户自定义过滤字段判断返回结果
+				isPassed = ResponseDataValidator.validateJsonResponseData(expectResult, actualResult, defaultFilterFileds);
+				break;
+			case 2:
+				String []fileds = Arrays.copyOfRange(bsh.args,2,bsh.args.length);
+				isPassed = ResponseDataValidator.validateJsonResponseDataByFileds(expectResult, actualResult, fileds);
+				break;
+			case 3:
+				//根据用户自定义过滤字段判断返回结果
+			    String []userDefinedFileds = Arrays.copyOfRange(bsh.args,2,bsh.args.length);
+				//log.info("过滤的字段为:"+userDefinedFileds.length);
+				isPassed = ResponseDataValidator.validateJsonResponseData(expectResult, actualResult, userDefinedFileds);
+				break;
+			default:
+				log.info("error :请指定断言类型!!!!");
+				break;
+		}
+	}catch(JSONException e){
+		isPassed = false;
+		e.printStackTrace();
+	}
+	if(!isPassed){
+		String errormsg = "预期的结果是:"+expectResult+",实际的结果是:"+actualResult;
+		prev.setSuccessful(false);
+		prev.setResponseMessage(errormsg);
+		log.info("test result is:failed!!!!");
+		log.info("error msg is:"+errormsg);
+	}else{
+		log.info("-------------------test result is:passed----------------");
+	}		
+}
+
+//清除expectResult数据
+vars.put("expectResult","");
+vars.put("isSkipped","");
+vars.put("testCaseNo","");
+vars.put("testCaseName","");
+vars.put("httpRequestName","");

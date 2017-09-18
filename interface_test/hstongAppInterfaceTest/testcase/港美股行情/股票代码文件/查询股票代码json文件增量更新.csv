@@ -1,0 +1,7 @@
+testCaseNo,testCaseName,version,expectResult,isSkipped,testSteps,remark
+1,股票文件版本号为空,,"{""ro"":{""respCode"":""9999"",""respMsg"":""version参数不能为空"",""result"":{},""ok"":false}}",N,,
+2,股票文件版本号无效,0,"{""ro"":{""respCode"":""0000"",""respMsg"":""处理成功"",""result"":{},""ok"":true}}",N,,
+3,股票文件版本号格式错误,abc,"{""baseRequest"":{""agentId"":""100000"",""appType"":1,""clientType"":1,""imei"":""865863020170333"",""sellChannel"":100000,""sellClient"":{""code"":""1"",""description"":""华盛证券app-Android"",""deviceType"":{""code"":""1"",""description"":""手机端""}},""sid"":"""",""sign"":"""",""timestamp"":1493972518901,""version"":""1.4.100"",""versionNum"":""1410""},""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{}}}",N,,
+4,股票文件版本号小于最新版本号,112,"{""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+5,股票文件版本号等于最新版本号,113,"{""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,
+6,股票文件版本号大于最新版本号,9999,"{""ro"":{""ok"":false,""respCode"":""10001"",""respMsg"":""系统未知错误"",""result"":{},""sid"":""""}}",N,,

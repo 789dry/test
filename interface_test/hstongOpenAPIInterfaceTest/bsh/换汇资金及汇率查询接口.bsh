@@ -1,0 +1,22 @@
+//${rate_1} rate//
+	String rate0 = vars.get("rate_1");
+	String rate1 = vars.get("rate2");
+	boolean isTestOK = false;
+	
+	if(rate1.equals(rate0)){
+		isTestOK = true;
+	}else{
+		log.info("港币兑换美元的汇率："+rate0+",汇率2："+rate1);	
+	}
+	//设置测试结果
+	if(!isTestOK){
+		SampleResult.setSuccessful(false);
+		SampleResult.setResponseMessage("换汇资金及汇率查询接口数据校验失败!!!!!!");
+		log.info("换汇资金及汇率查询接口数据校验失败!!!!!!");
+	}else{
+		SampleResult.setSuccessful(true);
+		SampleResult.setResponseMessage("换汇资金及汇率查询接口数据校验成功!!!!!!");
+		log.info("换汇资金及汇率查询接口数据校验成功!!!!!!");
+	}	
+
+
