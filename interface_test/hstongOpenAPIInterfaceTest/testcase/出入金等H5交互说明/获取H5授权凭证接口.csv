@@ -1,0 +1,5 @@
+testCaseNo,testCaseName,remoteAddr,target,expectResult,isSkipped
+1,remoteAddr为空,,1,"{""result"":{""MID"":3611,""exkey"":""31de218f-4c97-4143-86ef-34a8cd189292"",""url"":""https://opendaily.hstong.com/h5/embed/exlogin?exkey=31de218f-4c97-4143-86ef-34a8cd189292&target=1&agentId=80003"",""sid"":""81a14a6e857645f69e1ab685199f7a09""},""code"":""00000""}",N
+2,remoteAddr格式错误,192.168.1.a,1,"{""result"":{""MID"":3611,""exkey"":""31de218f-4c97-4143-86ef-34a8cd189292"",""url"":""https://opendaily.hstong.com/h5/embed/exlogin?exkey=31de218f-4c97-4143-86ef-34a8cd189292&target=1&agentId=80003"",""sid"":""81a14a6e857645f69e1ab685199f7a09""},""code"":""00000""}",N
+3,target为空,192.168.1.1,,"{""result"":{""MID"":3611,""exkey"":""31de218f-4c97-4143-86ef-34a8cd189292"",""url"":""https://opendaily.hstong.com/h5/embed/exlogin?exkey=31de218f-4c97-4143-86ef-34a8cd189292&target=1&agentId=80003"",""sid"":""81a14a6e857645f69e1ab685199f7a09""},""code"":""00000""}",N
+4,target目标页面不在指定范围内,192.168.1.1,-1,"{""code"":""10003"",""error"":""target参数错误""}",N

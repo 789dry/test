@@ -1,7 +1,7 @@
 testNo,interfaceName,path,method,buzzParams,buzzParams_updated,isSkipped
 1,交易委托接口,stock/entrust,POST,"""entrustAmount"":""20000"",""entrustPrice"":""0.183"",""entrustBs"":1,""entrustType"":2,""stockCode"":""00080"",""exchangeType"":""K"",""clientType"":7","""entrustAmount"":""20000"",""entrustPrice"":""0.183"",""entrustBs"":1,""entrustType"":2,""stockCode"":""00080"",""exchangeType"":""K"",""clientType"":8",N
-2,交易撤单接口,stock/cancelEntrust,POST,"""entrustAmount"":""20000"",""entrustPrice"":""0.183"",""entrustId"":$entrustId_1,""stockCode"":""00080"",""exchangeType"":""K""","""entrustAmount"":""20000"",""entrustPrice"":""0.183"",""entrustId"":$entrustId_1,""stockCode"":""00081"",""exchangeType"":""K""",N
-3,交易登录授权接口,stock/login,POST,"""account"":""$stock_account_18600000400"",""password"":""$pay_password_18600000400"",""remoteAddr"":""192.168.1.1""","""account"":""$stock_account_18600000400"",""password"":""$pay_password_18600000400"",""remoteAddr"":""192.168.1.2""",N
+2,交易撤单接口,stock/cancelEntrust,POST,"""entrustAmount"":""20000"",""entrustPrice"":""0.183"",""entrustId"":11,""stockCode"":""00080"",""exchangeType"":""K""","""entrustAmount"":""20000"",""entrustPrice"":""0.183"",""entrustId"":$entrustId_1,""stockCode"":""00081"",""exchangeType"":""K""",N
+3,交易登录授权接口,stock/login,POST,"account:""10000059"",""password"":""iVlCkAYR7M4="",""remoteAddr"":""192.168.1.1""","account:""10000059"",""password"":""iVlCkAYR7M4="",""remoteAddr"":""192.168.1.1""",N
 4,查询历史委托列表接口,stock/queryHistoryEntrustList,POST,"""exchangeType"":""K"",""queryParamStr"":""0"",""queryCount"":""2"",""startDate"":""20170815"",""endDate"":""20170815""","""exchangeType"":""K"",""queryParamStr"":""0"",""queryCount"":""2"",""startDate"":""20170815"",""endDate"":""20170816""",N
 5,查询历史成交列表接口,stock/queryHistoryDeliverList,POST,"""exchangeType"":""K"",""queryParamStr"":""0"",""queryCount"":""5"",""startDate"":""20170807"",""endDate"":""20170815""","""exchangeType"":""K"",""queryParamStr"":""0"",""queryCount"":""5"",""startDate"":""20170807"",""endDate"":""20170816""",N
 6,查询历史资金流水接口,stock/queryHistoryFundJourList,POST,"""exchangeType"":""K"",""queryParamStr"":""0"",""fundJourParentTypes"":""1"",""queryCount"":""5"",""startDate"":""20170807"",""endDate"":""20170817""","""exchangeType"":""K"",""queryParamStr"":""0"",""fundJourParentTypes"":""1"",""queryCount"":""5"",""startDate"":""20170807"",""endDate"":""20170818""",N
@@ -17,4 +17,6 @@ testNo,interfaceName,path,method,buzzParams,buzzParams_updated,isSkipped
 16,换汇资金及汇率查询接口,exchange/queryBaseInfo,POST,,,N
 17,撤销换汇申请接口,exchange/cancel,POST,"""id"":""1""","""id"":""2""",N
 18,查询换汇列表接口,exchange/queryList,POST,"""currencyCode"":""HKD"",""targetCurrencyCode"":""USD"",""status"":""0"",""offset"":""0"",""limit"":""5""","""currencyCode"":""HKD"",""targetCurrencyCode"":""USD"",""status"":""0"",""offset"":""0"",""limit"":""6""",N
-19,获取H5授权凭证接口,stock/getAccessSid,POST,"""token"":""$token"",""remoteAddr"":""192.168.1.1""","""token"":""$token"",""remoteAddr"":""192.168.1.2""",N
+19,获取H5授权凭证接口,stock/getAccessSid,POST,"""remoteAddr"":""192.168.1.1""","""token"":""$token"",""remoteAddr"":""192.168.1.2""",N
+20,补开美股申请接口,stock/openUsAccount,POST,"""account"":""10004360"",""password"":""123456""","""account"":""${account}"",""password"":""${password}""",N
+21,退出交易登录接口,stock/logoutTrade,POST,,,N

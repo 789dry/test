@@ -5,5 +5,5 @@ testCaseNo,testCaseName,account,password,remoteAddr,expectResult,isSkipped,testS
 4,交易密码为空,10000051,,192.168.1.4,"{""code"":""50006"",""error"":""交易密码错误""}",N,,
 5,交易密码错误,10000051,456123,192.168.1.5,"{""code"":""50006"",""error"":""交易密码错误""}",N,,
 6,交易密码不全为数字,10000420,12345a,192.168.1.6,"{""code"":""50006"",""error"":""交易密码错误""}",N,,
-7,客户端IP地址为空,10000051,123456,,"{""result"":{""account"":""10000051"",""nikeName"":""505027"",""tradePerm"":""2"",""hkMarginStatus"":""0"",""token"":""fc36d3d3b17f401c81528a007f3c31ba""},""code"":""00000""}",N,,
-8,客户端IP地址格式错误,10000051,123456,192.168.1.8a,"{""result"":{""account"":""10000051"",""nikeName"":""505027"",""tradePerm"":""2"",""hkMarginStatus"":""0"",""token"":""fc36d3d3b17f401c81528a007f3c31ba""},""code"":""00000""}",N,,
+7,客户端IP地址为空,10000051,123456,,"{""result"":{""account"":""10000051"",""nikeName"":""505027"",""tradePerm"":""2"",""hkMarginStatus"":""0"",""token"":""a80c598040aa485eb0ca3240b8465ff6"",""mid"":""3611""},""code"":""00000""}",N,,
+8,客户端IP地址格式错误,10000051,123456,192.168.1.8a,"{""result"":{""account"":""10000051"",""nikeName"":""505027"",""tradePerm"":""2"",""hkMarginStatus"":""0"",""token"":""7ff731521d8b48bfacc7003e0f909696"",""mid"":""3611""},""code"":""00000""}",N,,

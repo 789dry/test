@@ -51,13 +51,6 @@ import com.hstong.open.api.OpenAPInterface;
 		vars.put("isNeedTokenParam","Yes");
 	}
 	
-	/*
-	String token = vars.get("token");
-	if(token != null && !"".equals(token) && buzz.indexOf("token") == -1){
-		params.put("token", token);
-		sampler.addArgument("token", token);
-	}
-	*/
 	//set client key params
 	String client_key="";
 	if(buzz.indexOf("client_key") == -1){
@@ -76,8 +69,15 @@ import com.hstong.open.api.OpenAPInterface;
 		params.put("sign_time",sign_time);
 		sampler.addArgument("sign_time", sign_time);
 	}
-
-	String sign = OpenAPInterface.getSign(client_key,params);
+	//get app secret 
+	String app_secret = vars.get("app_secret");
+	String sign = "";
+	if(app_secret != null && !"".equals(app_secret)){
+		sign = OpenAPInterface.getSign2(client_key,app_secret,params);
+		vars.put("app_secret",""); //clear value
+	}else{
+		sign = OpenAPInterface.getSign(client_key,params);
+	} 
 	//vars.put("sign", sign);
 	sampler.addArgument("sign", sign);
 	//log.info("sign_time is:"+sign_time+",sign is:"+sign);
