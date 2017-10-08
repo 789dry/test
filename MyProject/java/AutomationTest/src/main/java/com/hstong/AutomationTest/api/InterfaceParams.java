@@ -8,48 +8,17 @@ import org.json.JSONObject;
  *
  */
 public class InterfaceParams {
-	JSONObject base; //平台参数
-	JSONObject buzz; //业务参数
-	String format;	 //发送格式
 	String sign;  	 //签名
+	String sign_time;  //签名时间，有效期为2min
+	String client_key; //第三方访问id
+	String token;	 //授权登陆凭证
+	String buzz; //业务参数
 	
 	public InterfaceParams() {
 		super();
-		this.base=new JSONObject();
-		this.base.put(key, value);
-		this.buzz = buzz;
-		this.format = "json";
-		this.sign = "FUvINnDALCpaxUeuU90pV3YgR/0=";
 	}
 	
-	public JSONObject getBuzz() {
-		return buzz;
-	}
-
-
-	public void setBuzz(JSONObject buzz) {
-		this.buzz = buzz;
-	}
-
-
-	public String getFormat() {
-		return format;
-	}
-
-
-	public void setFormat(String format) {
-		this.format = format;
-	}
-
-
-	public String getSign() {
-		return sign;
-	}
-
-
-	public void setSign(String sign) {
-		this.sign = sign;
-	}
+	
 
 
 	public static void main(String[] args) {

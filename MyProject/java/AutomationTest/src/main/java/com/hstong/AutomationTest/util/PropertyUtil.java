@@ -28,11 +28,13 @@ public class PropertyUtil {
             //读取属性文件
             InputStream in = new BufferedInputStream (new FileInputStream(baseParamsFile));
             prop.load(in);     ///加载属性列表
+            /*
             Iterator<String> it=prop.stringPropertyNames().iterator();
             while(it.hasNext()){
                 String key=it.next();
                 base.put(key, value);
-            }
+            }*/
+            
             in.close();
         }
         catch(Exception e){

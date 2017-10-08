@@ -1,4 +1,4 @@
-package com.hstong.AutomationTest.test;
+package com.hstong.AutomationTest.testcase;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;

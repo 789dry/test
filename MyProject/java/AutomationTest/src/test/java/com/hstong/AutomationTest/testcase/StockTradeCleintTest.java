@@ -1,4 +1,4 @@
-package com.hstong.AutomationTest.test;
+package com.hstong.AutomationTest.testcase;
 
 import java.io.IOException;
 import java.time.Instant;
