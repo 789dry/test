@@ -5,6 +5,8 @@ import java.time.Instant;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import com.hstong.open.api.OpenAPInterface;
+import java.net.URLEncoder;
+import java.io.UnsupportedEncodingException;
 
 	//是否改变传参进行测试
 	String isChangeParams = vars.get("isChangeParams");
@@ -21,7 +23,8 @@ import com.hstong.open.api.OpenAPInterface;
 		if(parts.length == 2){
 		    value = parts[1];
 		}
-		
+		if("/".equals(value))
+			continue;
 		if("password".equals(key)){
 			String stock_password_encrypt = OpenAPInterface.getEncryptedPwd(value);
 			params.put(key, stock_password_encrypt);

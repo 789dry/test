@@ -35,6 +35,7 @@ if("Y".equals(isSkipped) || isSkipped == "Y"){
 	if(null == expectResult || "" == expectResult){
 		expectResult = "{\"ro\":{\"respCode\":\"0000\",\"respMsg\":\"处理成功\",\"sid\":\"\",\"result\":{},\"ok\":true}}";
 	}
+	expectResult = expectResult.replaceAll(",\"\":\"\"","");
 	log.info("expectResult is :"+expectResult);
 	log.info("actualResult is :"+actualResult);
 	if(bsh.args.length > 1){
@@ -68,7 +69,7 @@ if("Y".equals(isSkipped) || isSkipped == "Y"){
 		e.printStackTrace();
 	}
 	if(!isPassed){
-		String errormsg = "预期的结果是:"+expectResult+",实际的结果是:"+actualResult;
+		String errormsg = "预期的结果是:"+expectResult+",\n实际的结果是:"+actualResult;
 		prev.setSuccessful(false);
 		prev.setResponseMessage(errormsg);
 		log.info("test result is:failed!!!!");

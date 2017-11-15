@@ -1,0 +1,4 @@
+testCaseNo,testCaseName,imageName,expectResult,isSkipped
+1,imageName含有特殊字符,"resource/imgs/idCards/!@#%……&（）-=、,..jpg","{""result"":1116,""code"":""00000""}",N
+2,上传的图片大于100KB,resource/imgs/idCards/test1.jpg,"{""result"":1116,""code"":""00000""}",N
+3,上传的文件不为图片格式,resource/imgs/test.txt,"{""code"":""60017"",""error"":""文件格式不正确""}",N

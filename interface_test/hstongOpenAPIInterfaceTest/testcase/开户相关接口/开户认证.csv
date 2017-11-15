@@ -1,0 +1,7 @@
+testCaseNo,testCaseName,mobile,countryCode,mobileCode,expectResult,isSkipped,testSteps,remark
+1,mobile为空,,0086,/,"{""code"":""10111"",""error"":""手机号码格式不正确""}",N,,
+2,mobile不全为数字,1860000040a,0086,/,"{""code"":""10111"",""error"":""手机号码格式不正确""}",N,,
+3,countryCode不全为数字,18600000409,008a,/,"{""result"":{""hasKh"":false,""khStatus"":""0"",""token"":""fa7104f72ee34874b1a03b010ae61df1""},""code"":""00000""}",N,,
+4,mobile与countryCode不匹配,18600000409,0852,/,"{""code"":""10111"",""error"":""手机号码格式不正确""}",N,,
+5,countryCode为空,18600000409,,/,"{""code"":""10107"",""error"":""手机验证码错误""}",N,,
+6,验证码已经被使用,18600000409,0086,/,"{""code"":""10107"",""error"":""手机验证码错误""}",N,,

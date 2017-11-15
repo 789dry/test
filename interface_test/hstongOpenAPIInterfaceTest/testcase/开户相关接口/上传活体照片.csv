@@ -1,0 +1,8 @@
+testCaseNo,testCaseName,type,imageName,action,image,expectResult,isSkipped
+1,上传第二张照片时action为空,2,image,,avatar3.jpg,"{""code"":""10003"",""error"":""参数不全""}",N
+2,上传第二张照片时action数值错误,2,image,13,avatar3.jpg,"{""code"":""60016"",""error"":""更新开户信息失败""}",N
+3,上传第二张照片时action数值不为int型,2,image,aa,avatar3.jpg,"{""code"":""10003"",""error"":""参数错误""}",N
+4,上传第一张照片时imageName数值错误,1,image1,/,avatar4.jpg,"{""code"":""10000"",""error"":""未知异常""}",N
+5,上传第一张照片时image为空,1,image,/,,"{""code"":""10003"",""error"":""必须同意页面上的协议""}",N
+6,上传第二张照片时imageName为空,2,,/,avatar3.jpg,"{""code"":""10003"",""error"":""参数错误""}",N
+7,上传第二张照片时image为空,2,image,/,,"{""code"":""10000"",""error"":""未知异常""}",N

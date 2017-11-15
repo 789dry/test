@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html" indent="no" encoding="UTF-8" doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN" doctype-system="http://www.w3.org/TR/html4/loose.dtd"/>
     <xsl:strip-space elements="*"/>
@@ -10,11 +11,15 @@
             <head>
                 <meta name="Author" content="shanhe.me"/>
                 <title>JMeter Test Results</title>
+                <link rel="stylesheet" href="../resource/bootstrap/bootstrap.min.css" />
+		<script src="../resource/bootstrap/jquery.min.js"></script>
+		<script src="../resource/bootstrap/bootstrap.min.js"></script>
+	
                 <style type="text/css"><![CDATA[
-            
+  
                 * { margin: 0; padding: 0 }
                 html, body { width: 100%; height: 100%; background: #b4b4b4; font-size: 12px }
-                table { border: none; border-collapse: collapse; table-layout: fixed }
+                table { border: none; border-collapse: collapse;}
                 td { vertical-align: baseline; font-size: 12px }
                 #left-panel { position: absolute; left: 0; top: 0; bottom: 0; width: 400px; overflow: auto; background: #dee4ea }
                 #left-panel li.navigation { font-weight: bold; cursor: default; color: #9da8b2; line-height: 18px; background-position: 0px 0px; background-repeat: no-repeat;}
@@ -58,9 +63,6 @@
 					color:#000000;
 				    margin: 1px; padding: 0
 				}
-				
-				
-               
 				table tr td, table tr th {
 					font-size: 68%;	
 					border: solid #fffeff;
@@ -109,7 +111,8 @@
 					white-space: pre-wrap;
 					border: solid #fffeff;
 					border-width: 2px 0px 0px 2px;
-
+					word-wrap:break-word; 
+					word-break:break-all;
 				}
 
 				h1 {
@@ -150,7 +153,36 @@
                     display: block;
                     display/* hide this definition from  IE5/6 */: table-row;
                 }
-
+				
+				.test_details
+				{
+					position: absolute; 
+				    top: 20%;  
+				    left: 20%;  
+				    width: 400px;  
+				    height: 400px;  
+				    background: #fff;  
+				    border: 4px solid #F90;  
+				    margin: -102px 0 0 -202px;  
+				    display: none;
+				}
+				.test_details span
+				{
+					cursor: pointer;
+				}
+				hr {
+				     margin-top: 0px; 
+				     margin-bottom: 0px; 
+				}
+				.patch_decode_url{
+					word-wrap:break-word; 
+					word-break:break-all;
+					width:300px;
+				}
+				.btn-group-lg>.btn, .btn-lg{
+					padding: 2px 3px; 
+					font-size: 12px;
+				}
             ]]></style>
                 <script type="text/javascript"><![CDATA[
 				//全局变量，用于定义上一个选中的li
@@ -227,13 +259,17 @@
                     for( var i = 0; i < len; ++i ) {
                         var span = spans[i];
                         if( "patch_decode_url" == span.className )
-                            span.innerHTML = decodeURIComponent(span.innerHTML);
+                            //span.innerHTML = decodeURIComponent(span.innerHTML);
+							$(span).html(decodeURIComponent(unescape($(span).html())));
                     }
                 };
 				
 				var click_firstThread = function(li){
 					//var totalDiv = document.getElementById("total-detail");
-					document.getElementById("right-panel").innerHTML = totalDiv.innerHTML;
+					//document.getElementById("right-panel").innerHTML = totalDiv.innerHTML;
+					$('#right-panel').html($(totalDiv).html());
+					console.log("2222:"+$(totalDiv).text());
+					console.log("1111:"+$(totalDiv).html());
 					if(li.style.backgroundImage == "url(\"collapse.png\")"){
 						li.style.backgroundImage = "url(\"expand.png\")";
 					}
@@ -326,14 +362,13 @@
 				
 				//存放统计内容对象
 				var totalDiv = null;
-				
-                window.onload = function() {
-                    patch_timestamp();
+				$(document).ready(function(){
+					patch_timestamp();
 					patch_decode_url();
                     patch_navigation_class();
                     totalDiv = document.getElementById("total-detail");
-				
-                };
+					console.log("ready go......");
+				});
 
                function expand(details_id)
 			   {
@@ -406,16 +441,10 @@
                         }
                     }
 				}
-
-                
-
             ]]></script>
             </head>
             <body>
                 <div id="left-panel">
-					<hr size="1" align="center" />
-                    <div align="center">接口测试用例 </div>
-                    <p> 
 					<hr size="1" align="center" />
 					<table align="center" class="details" border="0" cellpadding="5" cellspacing="2" width="100%">
                         <tr><td align="center" ><input type="radio" name="check_case" checked="checked" onclick="show_Li('ALL')">ALL</input></td>
@@ -425,11 +454,11 @@
                     </table>
 									
                     <hr size="1" align="center" />
-					 </p>
+					 
                     <ul id="result-list">
                         <xsl:for-each select="*">
                             <!-- group with the previous sibling -->                  
-                            <xsl:if test="position() = 1 or @tn != preceding-sibling::*[1]/@tn">								    
+                            <xsl:if test="(position() = 1 or @tn != preceding-sibling::*[1]/@tn) and  not(@tn[starts-with(.,'tearDown')])">								    
                                 <xsl:call-template name="left"/>li class="navigation"  <xsl:call-template name="right"/><a onclick="change(this);click_firstThread(this);" style="padding: 0 0 0 15px; background-image: url(collapse.png);background-repeat:no-repeat;">Thread: <xsl:value-of select="@tn"/></a>
 								<xsl:call-template name="left"/>ul class = "myShow" <xsl:call-template name="right"/> 
                             </xsl:if>
@@ -599,6 +628,92 @@
         </div>
     </xsl:template>
 
+        <!--li节点展示的detail-div详情内容 -->
+    <xsl:template name="testcase-detail">
+    	<table class="table table-striped">
+		   <thead>
+		      <tr>
+		         <th>sample信息</th>
+		      </tr>
+		   </thead>
+		   <tbody>
+		      <tr>
+		         <td style="width:160px;">TestCase Name</td>
+		         <td><xsl:value-of select="@lb"/></td>
+		      </tr>
+		      <tr>
+		         <td>Time</td>
+		         <td><xsl:value-of select="@t"/> ms</td>
+		      </tr>
+		      <tr>
+		         <td>Latency</td>
+		         <td><xsl:value-of select="@lt"/> ms</td>
+		      </tr>
+		      <tr>
+		         <td>Response Code</td>
+		         <td><xsl:value-of select="@rc"/></td>
+		      </tr>
+		      <tr>
+		         <td>Response Message</td>
+		         <td style="word-break:break-all; word-wrap:break-all;"><xsl:value-of select="@rm"/></td>
+		      </tr>
+		      <tr>
+		         <td>TestResult</td>
+		         <td>
+		         	<xsl:choose>
+						<xsl:when test="@s = 'true'"><span style="color:green;font-weight: bold;">Pass</span></xsl:when>
+						<xsl:otherwise><span style="color:red;font-weight: bold;">Failed</span></xsl:otherwise>
+					</xsl:choose>
+		         </td>
+		      </tr>
+		   </tbody>
+		   <thead>
+		      <tr>
+		         <th>Request信息</th>
+		      </tr>
+		   </thead>
+		   <tbody>
+		      <tr>
+		         <td>Method/Url</td>
+		         <td><xsl:value-of select="method"/><xsl:text> </xsl:text><xsl:value-of select="java.net.URL"/></td>
+		      </tr>
+		      <tr>
+		         <td>Query String</td>
+		         <td style="word-break:break-all; word-wrap:break-all;">
+		         	<span class="patch_decode_url"><xsl:value-of select="queryString"/></span>
+		         </td>
+		      </tr>
+			   <tr>
+		         <td>Cookies</td>
+		         <td><xsl:value-of select="cookies"/></td>
+		      </tr>
+		      <tr>
+		         <td>Request Headers</td>
+		         <td><xsl:value-of select="requestHeader"/></td>
+		      </tr>
+		   </tbody>
+		    
+		    <thead>
+		      <tr>
+		         <th>Response信息</th>
+		      </tr>
+		   </thead>
+		   <tbody>
+		      <tr>
+		         <td>Response Headers</td>
+		         <td><xsl:value-of select="responseHeader"/></td>
+		      </tr>
+		      <tr>
+		         <td>Response Data</td>
+		         <td style="word-break:break-all; word-wrap:break-all;"><xsl:value-of select="responseData"/></td>
+		      </tr>
+			   <tr>
+		         <td>Response File</td>
+		         <td><xsl:value-of select="responseFile"/></td>
+		      </tr>
+		   </tbody>
+		</table>
+    </xsl:template>
 	<xsl:template name="left">
 
 	<xsl:text disable-output-escaping="yes">&lt;</xsl:text>
@@ -641,17 +756,27 @@
                 <th>失败</th>
                 <th>成功率</th>
                 <th>平均时间</th>
+                <!-- 
                 <th>最短时间</th>
                 <th>最长时间</th>
+                 -->
             </tr>
             <tr valign="top">
+			<!--
 				<xsl:variable name="allCount" select="count(//sample) + count(//httpSample) - count(/testResults/sample[(count(child::httpSample) + count(child::sample))> 0])"/>
                 <xsl:variable name="allFailureCount" select="count(//sample[attribute::s='false']) + count(//httpSample[attribute::s='false'])- count(/testResults/sample[count(child::httpSample) > 0][attribute::s='false'])"/>
+			-->
+				<xsl:variable name="allCount" select="count(//httpSample[starts-with(@lb,'hstOpenAPI') and ancestor-or-self::*/@lb[not(starts-with(@lb,'tearDown'))]])"/>
+				<!--  <xsl:variable name="allCount" select="count(//httpSample[starts-with(@lb,'hstOpenAPI') and (not(starts-with(@tn,'tearDown')))])"/> -->
+                <xsl:variable name="allFailureCount" select="count(//httpSample[starts-with(@lb,'hstOpenAPI') and attribute::s='false'])"/>
                 <!--<xsl:variable name="allCount" select="count(/testResults/*)" />
                 <xsl:variable name="allFailureCount" select="count(/testResults/*[attribute::s='false'])" />
                 <xsl:variable name="allSuccessCount" select="count(/testResults/*[attribute::s='true'])" />-->
                 <xsl:variable name="allSuccessPercent" select="($allCount - $allFailureCount) div $allCount" />
+                <!-- 
                 <xsl:variable name="allTotalTime" select="sum(//sample/@t) + sum(//httpSample/@t) - sum(//sample[(count(child::httpSample) + count(child::sample)) > 0]/@t)" />
+                 -->
+                 <xsl:variable name="allTotalTime" select="sum(//httpSample[starts-with(@lb,'hstOpenAPI')]/@t)" />
                 <xsl:variable name="allAverageTime" select="$allTotalTime div $allCount" />
                 <xsl:variable name="allMinTime">
                     <xsl:call-template name="min">
@@ -685,6 +810,7 @@
                         <xsl:with-param name="value" select="$allAverageTime" />
                     </xsl:call-template>
                 </td>
+                <!-- 
                 <td align="center">
                     <xsl:call-template name="display-time">
                         <xsl:with-param name="value" select="$allMinTime" />
@@ -695,6 +821,7 @@
                         <xsl:with-param name="value" select="$allMaxTime" />
                     </xsl:call-template>
                 </td>
+                 -->
             </tr>
         </table>
     </xsl:template>
@@ -709,12 +836,14 @@
 			<th>Failures</th>
 			<th>Success Rate</th>
 			<th>Average Time</th>
+			<!--
 			<th>Min Time</th>
 			<th>Max Time</th>
+			-->
 			<th></th>
 		</tr>
 
-		<xsl:for-each select="/testResults/*[not(@lb = preceding::*/@lb)]">
+		<xsl:for-each select="(/testResults/*[not(@lb = preceding::*/@lb or starts-with(@tn,'tearDown'))])">
             <xsl:variable name="label" select="@lb" />
             <xsl:variable name="count">
                 <xsl:call-template name="getCount">
@@ -728,7 +857,8 @@
             </xsl:variable>
             <xsl:variable name="successCount" select="count(../*[@lb = current()/@lb][attribute::s='true'])" />
             <xsl:variable name="successPercent" select="($count - $failureCount) div $count" />
-            <xsl:variable name="totalTime" select="sum(../*[@lb = current()/@lb]/@t)" />
+            <!--  <xsl:variable name="totalTime" select="sum(../*[@lb = current()/@lb]/@t)" /> -->
+            <xsl:variable name="totalTime" select="sum(current()//httpSample[starts-with(@lb,'hstOpenAPI')]/@t)" />
             <xsl:variable name="averageTime" select="$totalTime div $count" />
 
  			<xsl:variable name="minTime">
@@ -774,6 +904,7 @@
 						<xsl:with-param name="value" select="$averageTime" />
 					</xsl:call-template>
 				</td>
+				<!--
 				<td align="right">
 					<xsl:call-template name="display-time">
 						<xsl:with-param name="value" select="$minTime" />
@@ -784,6 +915,7 @@
 						<xsl:with-param name="value" select="$maxTime" />
 					</xsl:call-template>
 				</td>
+				-->
                 <xsl:choose>
                     <xsl:when test="descendant::httpSample|sample ">
                         <td align="center">
@@ -810,7 +942,7 @@
 
                          <!-- 包含子节点用例-->
                          <xsl:choose>
-                             <xsl:when test="descendant::httpSample|sample ">
+                             <xsl:when test="descendant::httpSample[starts-with(@lb,'hstOpenAPI')] ">
                                  <tr class="page_details">
                                  <xsl:variable name="parent_position" select="position()"/>
                                  <xsl:attribute name="id"><xsl:text/>page_details_<xsl:value-of select="$parent_position" />_<xsl:value-of
@@ -821,15 +953,17 @@
                                  <table bordercolor="#000000" bgcolor="#2674A6" border="0"  cellpadding="1" cellspacing="1" width="95%" class="child_details">
                                  <tr valign="top">
                                      <th id="th_style">TestcaseName</th>
-                                     <th id="th_style"># Samples</th>
-                                     <th id="th_style">Failures</th>
-                                     <th id="th_style">Success Rate</th>
+                                     <th id="th_style">TestResult</th>
+                                     <th id="th_style">ResponseTime</th>
+                                     <th id="th_style">LatencyTime</th>
+                                     <th id="th_style">Details</th>
+                                     <!--
                                      <th id="th_style">Average Time</th>
                                      <th id="th_style">Min Time</th>
                                      <th id="th_style">Max Time</th>
-                                     <!--<th id="th_style"></th>-->
+                                     <th id="th_style"></th>-->
                                  </tr>
-                                 <xsl:for-each select="descendant::httpSample|sample">
+                                 <xsl:for-each select="descendant::httpSample[starts-with(@lb,'hstOpenAPI')]">
                                      <xsl:variable name="label_c" select="@lb" />
                                      <xsl:variable name="count_c">
                                          <xsl:call-template name="getCount">
@@ -845,7 +979,9 @@
                                      <xsl:variable name="successPercent_c" select="($count_c - $failureCount_c) div $count_c" />
                                      <xsl:variable name="totalTime_c" select="sum(../*[@lb = current()/@lb]/@t)" />
                                      <xsl:variable name="averageTime_c" select="$totalTime_c div $count_c" />
-
+									 <xsl:variable name="responseTime" select="current()/@t" />
+									 <xsl:variable name="latencyTime" select="current()/@lt" />
+									 
                                      <xsl:variable name="minTime_c">
                                          <xsl:call-template name="min">
 
@@ -875,8 +1011,49 @@
                                              </xsl:if>
                                          </td>
                                          <td align="center">
-                                             <xsl:value-of select="$count_c" />
+                                             <!--<xsl:value-of select="$count_c" />  -->
+                                             <xsl:choose>
+												<xsl:when test="@s = 'true'"><span style="color:green;font-weight: bold;">Pass</span></xsl:when>
+												<xsl:otherwise><span style="color:red;font-weight: bold;">Failed</span></xsl:otherwise>
+											</xsl:choose>
                                          </td>
+                                         <td align="right">
+                                             <xsl:call-template name="display-time">
+                                                 <xsl:with-param name="value" select="$responseTime" />
+                                             </xsl:call-template>
+                                         </td>
+                                         <td align="right">
+                                             <xsl:call-template name="display-time">
+                                                 <xsl:with-param name="value" select="$latencyTime" />
+                                             </xsl:call-template>
+                                         </td>
+                                         <td align="right">                            
+											      	<xsl:variable name="showDetailsWin_id" select="concat('showDetailsWin',$parent_position,'_',position())"/>
+											      	<xsl:variable name="dataTarget_id" select="concat('myModal_',$showDetailsWin_id)"/>
+											      	
+											      	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+											      	<xsl:attribute name="data-target"><xsl:text/>#<xsl:value-of select="$dataTarget_id" /></xsl:attribute>
+											      	显示详情</button>
+											      <!-- 模态框（Modal） -->
+													<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+														<xsl:attribute name="id"><xsl:text/><xsl:value-of select="$dataTarget_id" /></xsl:attribute>
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header" style="padding:0 30px 0 0;">
+																	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+																</div>
+																<div class="modal-body">
+																	<xsl:call-template name="testcase-detail" />
+																</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+																	</button>
+																</div>
+															</div><!-- /.modal-content -->
+														</div><!-- /.modal -->
+													</div>
+                                         </td>
+                                         <!--
                                          <td align="center">
                                              <xsl:value-of select="$failureCount_c" />
                                          </td>
@@ -900,6 +1077,7 @@
                                                  <xsl:with-param name="value" select="$maxTime_c" />
                                              </xsl:call-template>
                                          </td>
+                                          -->
                                          <!--<td align="center">-->
                                              <!--<a href="">-->
                                                  <!--<xsl:attribute name="href"><xsl:text/>javascript:changeImage('page_details_<xsl:value-of select="$parent_position"/>_<xsl:value-of select="position()" />')</xsl:attribute>-->
@@ -1029,27 +1207,35 @@
     <!--统计事务节点下用例总数 -->
 	<xsl:template name="getCount">
         <xsl:param name="count_" select="/testResults/*[0]"/>
+		<xsl:value-of select="count(current()//child::httpSample[starts-with(@lb,'hstOpenAPI')])"/>
+		<!-- 
         <xsl:choose>
-            <xsl:when test="(count(current()/child::sample) + count(current()/child::httpSample)) > 0">
+ 
+	         <xsl:when test="(count(current()/child::sample) + count(current()/child::httpSample)) > 0">
                 <xsl:value-of select="count(../*[@lb = current()/@lb ]) * (count(current()//child::sample) + count(current()//child::httpSample))"/>
-
-        </xsl:when>
+	        </xsl:when>
+	         
             <xsl:otherwise>
                 <xsl:value-of select="count(../*[@lb = current()/@lb and @ts =  current()/@ts])"/>
             </xsl:otherwise>
         </xsl:choose>
+		-->
 	</xsl:template>
 
     <xsl:template name="getFailureCount">
         <xsl:param name="getFailureCountt_" select="/testResults/*[0]"/>
-        <xsl:choose>
-            <xsl:when test="(count(current()/child::sample) + count(current()/child::httpSample)) > 0">
+        <xsl:value-of select="count(current()//child::httpSample[attribute::s='false' and starts-with(@lb,'hstOpenAPI')])"/>
+		<!-- 
+		<xsl:choose>
+        	
+        	<xsl:when test="(count(current()/child::sample) + count(current()/child::httpSample)) > 0">
                 <xsl:value-of select="count(../*[@lb = current()/@lb]//httpSample[attribute::s='false']) + count(../*[@lb = current()/@lb]//sample[attribute::s='false'])"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="count(../*[@lb = current()/@lb and @ts =  current()/@ts][attribute::s='false'])"/>
             </xsl:otherwise>
         </xsl:choose>
+		 -->
     </xsl:template>
 
     <xsl:template name="getFatherPosition">
