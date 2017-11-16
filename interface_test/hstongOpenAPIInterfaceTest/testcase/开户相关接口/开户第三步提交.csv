@@ -38,8 +38,8 @@ testCaseNo,testCaseName,annualIncome,totalNetValueOfAssets,ownershipOfResidence,
 37,optionsExperience数值为空,0,0,1,0,1,0,2,0,2,1,1,1,,"{""code"":""00000"","""":""""}",N
 38,optionsExperience数值错误,0,0,1,0,1,0,2,0,2,1,1,1,9,"{""code"":""00000"","""":""""}",N
 39,optionsExperience参数数值为非int型,0,0,1,0,1,0,2,0,2,1,1,1,aa,"{""code"":""10015"",""error"":""参数错误""}",N
-40,不传参数totalNetValueOfAssets,0,/,1,0,1,0,2,0,2,1,1,1,1,"{""code"":""00000"","""":""""}",N
-41,不传参数ownershipOfResidence,0,0,/,0,1,0,2,0,2,1,1,1,1,"{""code"":""00000"","""":""""}",N
-42,不传参数mainSourceOfWealth,0,0,1,/,1,0,2,0,2,1,1,1,1,"{""code"":""10016"",""error"":""参数错误""}",N
-43,不传参数sourceOfWealth,0,0,1,0,/,0,2,0,2,1,1,1,1,"{""code"":""00000"","""":""""}",N
-44,不传参数investmentObjective,0,0,1,0,1,/,2,0,2,1,1,1,1,"{""code"":""00000"","""":""""}",N
+40,不传参数totalNetValueOfAssets,0,/,1,0,1,0,2,0,2,1,1,1,1,"{""code"":""10003"",""error"":""totalNetValueOfAssets是必须传递的参数""}",N
+41,不传参数ownershipOfResidence,0,0,/,0,1,0,2,0,2,1,1,1,1,"{""code"":""10003"",""error"":""ownershipOfResidence是必须传递的参数""}",N
+42,不传参数mainSourceOfWealth,0,0,1,/,1,0,2,0,2,1,1,1,1,"{""code"":""10003"",""error"":""mainSourceOfWealth是必须传递的参数""}",N
+43,不传参数sourceOfWealth,0,0,1,0,/,0,2,0,2,1,1,1,1,"{""code"":""10003"",""error"":""sourceOfWealth是必须传递的参数""}",N
+44,不传参数investmentObjective,0,0,1,0,1,/,2,0,2,1,1,1,1,"{""code"":""10003"",""error"":""investmentObjective是必须传递的参数""}",N

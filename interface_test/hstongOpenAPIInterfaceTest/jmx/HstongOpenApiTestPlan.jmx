@@ -295,7 +295,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename">D:\MyProject\JMeter\hstongAppInterfaceTest\result\ViewResultsTree.xml</stringProp>
+        <stringProp name="filename">D:\MyProject\JMeter\hstongOpenApi\result\result.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="华盛OpenAPI" enabled="true">
@@ -9082,7 +9082,7 @@ if(!isTestOK){
             </hashTree>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="H5交互相关接口(已转移到出入金等H5交互说明模块)" enabled="false">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="H5交互相关接口(已转移到出入金等H5交互说明模块)" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
@@ -20568,6 +20568,31 @@ sampler.getHeaderManager().add(new Header(&quot;User-Agent&quot;,&quot;Mozilla/5
                   </hashTree>
                 </hashTree>
               </hashTree>
+              <kg.apc.jmeter.control.ParameterizedController guiclass="kg.apc.jmeter.control.ParameterizedControllerGui" testclass="kg.apc.jmeter.control.ParameterizedController" testname="jp@gc - 批量删除验证码(手机号)" enabled="true">
+                <elementProp name="ParameterizedController" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="likeCondition" elementType="Argument">
+                      <stringProp name="Argument.name">likeCondition</stringProp>
+                      <stringProp name="Argument.value">186000004%</stringProp>
+                      <stringProp name="Argument.desc">SQL语句like 匹配条件</stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+              </kg.apc.jmeter.control.ParameterizedController>
+              <hashTree>
+                <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="批量删除验证码(手机号)" enabled="true">
+                  <collectionProp name="ModuleController.node_path">
+                    <stringProp name="23750841">工作台</stringProp>
+                    <stringProp name="-1048974370">华盛OpenAPI测试计划</stringProp>
+                    <stringProp name="938223691">data access layer</stringProp>
+                    <stringProp name="1825015010">hs_msgcenter</stringProp>
+                    <stringProp name="1284009662">sms_auth_code</stringProp>
+                    <stringProp name="1019475188">jp@gc - 批量删除验证码(手机号)</stringProp>
+                  </collectionProp>
+                </ModuleController>
+                <hashTree/>
+              </hashTree>
             </hashTree>
           </hashTree>
           <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="开户第七步查询" enabled="true">
@@ -27052,7 +27077,7 @@ vars.put(&quot;token&quot;,token);</stringProp>
                 </elementProp>
               </kg.apc.jmeter.control.ParameterizedController>
               <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="hstOpenAPI_${httpRequestName}" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${httpRequestName}" enabled="true">
                   <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                     <collectionProp name="HTTPFileArgs.files">
                       <elementProp name="${frontIDCardImg}" elementType="HTTPFileArg">
@@ -27134,7 +27159,7 @@ vars.put(&quot;token&quot;,token);</stringProp>
                 </elementProp>
               </kg.apc.jmeter.control.ParameterizedController>
               <hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="hstOpenAPI_${httpRequestName}" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${httpRequestName}" enabled="true">
                   <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                     <collectionProp name="HTTPFileArgs.files">
                       <elementProp name="${backIDCardImg}" elementType="HTTPFileArg">
